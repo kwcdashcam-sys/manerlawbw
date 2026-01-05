@@ -29,7 +29,7 @@ const formSchema = z.object({
 type FormData = z.infer<typeof formSchema>;
 
 async function handleContactSubmit(data: FormData) {
-  'use server';
+  // 'use server';
   // Simulate API call
   await new Promise(resolve => setTimeout(resolve, 2000));
   console.log('Form data submitted:', data);
