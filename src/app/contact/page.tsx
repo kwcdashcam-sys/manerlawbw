@@ -2,6 +2,7 @@ import Image from "next/image";
 import { ContactForm } from "@/components/contact-form";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { Mail, MapPin, Phone } from "lucide-react";
+import { Card } from "@/components/ui/card";
 
 export default function ContactPage() {
   const contactImage = PlaceHolderImages.find(p => p.id === 'contact-banner');
