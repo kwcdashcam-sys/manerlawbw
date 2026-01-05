@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
-import { Briefcase, Gavel, HeartHandshake, ArrowRight, Home as HomeIcon, ScrollText, Lightbulb, Linkedin, Mail, MapPin, Phone, Scale } from 'lucide-react';
+import { Briefcase, Gavel, HeartHandshake, ArrowRight, Home as HomeIcon, ScrollText, Lightbulb, Linkedin, Mail, MapPin, Phone, Scale, Facebook, Twitter } from 'lucide-react';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { ContactForm } from '@/components/contact-form';
 
@@ -297,6 +297,14 @@ export default function Home() {
                 <Link href="#" className="text-primary-foreground/80 hover:text-white transition-colors">
                   <Linkedin size={24} />
                   <span className="sr-only">LinkedIn</span>
+                </Link>
+                <Link href="#" className="text-primary-foreground/80 hover:text-white transition-colors">
+                  <Facebook size={24} />
+                  <span className="sr-only">Facebook</span>
+                </Link>
+                <Link href="#" className="text-primary-foreground/80 hover:text-white transition-colors">
+                  <Twitter size={24} />
+                  <span className="sr-only">X.com</span>
                 </Link>
               </div>
             </div>
