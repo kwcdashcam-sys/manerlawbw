@@ -49,11 +49,11 @@ const attorneys = [
     linkedin: "https://www.linkedin.com/in/ashish-manral-15731536/"
   },
   {
-    name: "David Chen",
-    title: "Head of Criminal Defense",
+    name: "Summer P.",
+    title: "Associate Attorney",
     image: PlaceHolderImages.find(p => p.id === 'attorney-2'),
-    bio: "A former prosecutor, David Chen brings invaluable insight to his criminal defense practice. He is a tenacious litigator known for his meticulous case preparation and unwavering defense of his clients' rights. David has successfully handled hundreds of cases, from DUIs to major felonies.",
-    linkedin: "#"
+    bio: "Summer P. is a dedicated associate attorney known for her meticulous case preparation and client-centered approach. She brings a fresh perspective and a commitment to achieving the best possible outcomes for our clients across various practice areas.",
+    linkedin: "https://www.linkedin.com/in/summer-p-9922bbb6/"
   }
 ];
 
