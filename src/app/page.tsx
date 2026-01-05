@@ -54,20 +54,6 @@ const attorneys = [
     image: PlaceHolderImages.find(p => p.id === 'attorney-2'),
     bio: "A former prosecutor, David Chen brings invaluable insight to his criminal defense practice. He is a tenacious litigator known for his meticulous case preparation and unwavering defense of his clients' rights. David has successfully handled hundreds of cases, from DUIs to major felonies.",
     linkedin: "#"
-  },
-  {
-    name: "Sarah Jenkins",
-    title: "Family Law Specialist",
-    image: PlaceHolderImages.find(p => p.id === 'attorney-3'),
-    bio: "Sarah Jenkins leads the family law practice with compassion and expertise. She is a certified mediator and believes in finding constructive solutions for families in transition. Her practice focuses on divorce, child custody, and adoption, always with the children's best interests at heart.",
-    linkedin: "#"
-  },
-  {
-    name: "Michael Rivera",
-    title: "Real Estate & Estate Planning",
-    image: PlaceHolderImages.find(p => p.id === 'attorney-4'),
-    bio: "Michael Rivera is a dual-specialist, expertly navigating the intricacies of both real estate law and estate planning. He helps clients protect their most valuable assets, from their homes to their legacies. His detail-oriented approach ensures every transaction and plan is ironclad.",
-    linkedin: "#"
   }
 ];
 
@@ -318,5 +304,3 @@ export default function Home() {
     </div>
   );
 }
-
-    
