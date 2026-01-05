@@ -45,14 +45,14 @@ export function Header() {
     <header
       className={cn(
         'sticky top-0 z-50 w-full transition-all duration-300',
-        isScrolled || !isHomePage ? 'bg-background/95 shadow-md backdrop-blur-sm' : 'bg-transparent',
-        isHomePage ? (isScrolled ? 'text-primary' : 'text-white') : 'text-primary'
+        'bg-background/95 shadow-md backdrop-blur-sm',
+        'text-primary'
       )}
     >
       <div className="container mx-auto flex h-20 items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link href="#home" className="flex items-center gap-2 font-bold text-xl font-headline">
-          <Scale className={cn("h-6 w-6 transition-colors", isScrolled || !isHomePage ? 'text-primary' : 'text-white')} />
-          <span className={cn('transition-colors', isScrolled || !isHomePage ? 'text-primary' : 'text-white')}>Manrel Law</span>
+          <Scale className="h-6 w-6 transition-colors text-primary" />
+          <span className="transition-colors text-primary">Manrel Law</span>
         </Link>
         <nav className="hidden md:flex items-center gap-6">
           {navLinks.map((link) => (
@@ -61,7 +61,7 @@ export function Header() {
               href={link.href}
               className={cn(
                 'font-medium transition-colors hover:text-accent',
-                activeLink === link.href ? 'text-accent' : (isScrolled || !isHomePage ? 'text-primary/80' : 'text-white/80'),
+                activeLink === link.href ? 'text-accent' : 'text-primary/80',
                 'relative after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-full after:scale-x-0 after:bg-accent after:transition-transform after:duration-300 hover:after:scale-x-100',
                 activeLink === link.href && 'after:scale-x-100'
               )}
@@ -78,7 +78,7 @@ export function Header() {
         <div className="md:hidden">
           <Sheet>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="icon" className={cn('transition-colors', isScrolled || !isHomePage ? 'text-primary hover:bg-secondary' : 'text-white hover:bg-white/20')}>
+              <Button variant="ghost" size="icon" className="transition-colors text-primary hover:bg-secondary">
                 <Menu />
               </Button>
             </SheetTrigger>
