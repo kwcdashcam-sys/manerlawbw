@@ -311,6 +311,7 @@ export default function Home() {
           </div>
           <div className="mt-8 border-t border-primary-foreground/20 pt-8 text-center text-primary-foreground/70">
             <p>&copy; {new Date().getFullYear()} Manrel Law. All Rights Reserved. Attorney Advertising.</p>
+            <p className="mt-2">Site developed and maintained by <a href="https://easywebtogo.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">easywebtogo.com</a></p>
           </div>
         </div>
       </footer>
