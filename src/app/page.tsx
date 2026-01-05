@@ -42,11 +42,11 @@ const practiceAreas = [
 
 const attorneys = [
   {
-    name: "Jessica Manrel",
+    name: "Ashish Manral",
     title: "Founding Partner",
     image: PlaceHolderImages.find(p => p.id === 'attorney-1'),
-    bio: "Jessica Manrel founded the firm with a vision of providing ethical, client-focused legal representation. With over 25 years of experience in corporate law, she is a renowned strategist in mergers, acquisitions, and complex corporate litigation. Her leadership and dedication to justice have set the standard for the entire firm.",
-    linkedin: "#"
+    bio: "Ashish Manral founded the firm with a vision of providing ethical, client-focused legal representation. With over 25 years of experience in corporate law, he is a renowned strategist in mergers, acquisitions, and complex corporate litigation. His leadership and dedication to justice have set the standard for the entire firm.",
+    linkedin: "https://www.linkedin.com/in/ashish-manral-15731536/"
   },
   {
     name: "David Chen",
@@ -110,7 +110,7 @@ export default function Home() {
                 <blockquote className="border-l-4 border-accent pl-6 italic text-foreground/90">
                 "Our commitment is not just to the law, but to the people we serve. We stand by you every step of the way, ensuring your voice is heard and your rights are protected."
                 <footer className="mt-4 not-italic">
-                    <span className="font-bold text-primary">Jessica Manrel,</span>
+                    <span className="font-bold text-primary">Ashish Manral,</span>
                     <span className="text-foreground/80"> Founding Partner</span>
                 </footer>
                 </blockquote>
