@@ -1,8 +1,8 @@
-# App Blueprint: Manrel Law - Professional Legal Solutions
+# App Blueprint: Maner Law - Professional Legal Solutions
 
 ## Core Features:
 
-- **Firm Overview:** A comprehensive overview of Manrel Law's history, mission, and values. This will be the main landing page, establishing the firm's brand and expertise.
+- **Firm Overview:** A comprehensive overview of Maner Law's history, mission, and values. This will be the main landing page, establishing the firm's brand and expertise.
 
 - **Practice Areas:** A detailed section or page showcasing the specific areas of law the firm specializes in. Each area will have a summary of services offered.
 

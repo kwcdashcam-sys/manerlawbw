@@ -5,8 +5,11 @@ import { Toaster } from "@/components/ui/toaster";
 
 
 export const metadata: Metadata = {
-  title: 'Manrel Law - Professional Legal Solutions',
-  description: 'Manrel Law offers expert legal solutions across various practice areas. Trust our experienced attorneys to navigate your legal challenges with professionalism and dedication.',
+  title: 'Maner Law - Professional Legal Solutions',
+  description: 'Maner Law offers expert legal solutions across various practice areas. Trust our experienced attorneys to navigate your legal challenges with professionalism and dedication.',
+  icons: {
+    icon: '/favicon.ico',
+  }
 };
 
 export default function RootLayout({

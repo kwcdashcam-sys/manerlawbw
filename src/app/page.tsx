@@ -45,11 +45,11 @@ const practiceAreas = [
 
 const attorneys = [
   {
-    name: "Ashish Manral",
+    name: "Ashish Maner",
     title: "Founding Partner",
     image: PlaceHolderImages.find(p => p.id === 'attorney-1'),
-    bio: "Ashish Manral founded the firm with a vision of providing ethical, client-focused legal representation. With over 25 years of experience in corporate law, he is a renowned strategist in mergers, acquisitions, and complex corporate litigation. His leadership and dedication to justice have set the standard for the entire firm.",
-    linkedin: "https://www.linkedin.com/in/ashish-manral-15731536/"
+    bio: "Ashish Maner founded the firm with a vision of providing ethical, client-focused legal representation. With over 25 years of experience in corporate law, he is a renowned strategist in mergers, acquisitions, and complex corporate litigation. His leadership and dedication to justice have set the standard for the entire firm.",
+    linkedin: "https://www.linkedin.com/in/ashish-maner-15731536/"
   },
   {
     name: "Summer P.",
@@ -97,7 +97,7 @@ export default function Home() {
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
       <section id="home" className="relative h-[50vh] min-h-[350px] text-white flex items-center">
-        <div className="absolute inset-0 bg-primary/60 z-10" />
+        <div className="absolute inset-0 bg-primary/80 z-10" />
         {heroImage && (
           <Image
             src={heroImage.imageUrl}
@@ -113,7 +113,7 @@ export default function Home() {
             Expert Legal Counsel for Your Peace of Mind
           </motion.h1>
           <motion.p {...fadeIn} transition={{ delay: 0.2 }} className="text-md md:text-lg max-w-3xl mx-auto mb-6 text-shadow-sm">
-            Manrel Law is dedicated to providing top-tier legal services with integrity and professionalism.
+            Maner Law is dedicated to providing top-tier legal services with integrity and professionalism.
           </motion.p>
           <motion.div {...fadeIn} transition={{ delay: 0.4 }}>
             <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-muted">
@@ -142,7 +142,7 @@ export default function Home() {
             </motion.div>
             <motion.div {...fadeIn} transition={{ delay: 0.2 }} className="space-y-4">
               <p className="text-base text-muted-foreground font-serif">
-                For nearly four decades, Manrel Law has stood as a pillar of legal excellence in our community. Founded in 1985 by Jonathan Manrel, our firm has grown from a small practice into a distinguished institution known for its principled approach to law.
+                For nearly four decades, Maner Law has stood as a pillar of legal excellence in our community. Founded in 1985 by Jonathan Maner, our firm has grown from a small practice into a distinguished institution known for its principled approach to law.
               </p>
               <p className="text-base text-muted-foreground font-serif">
                 Our mission is clear: to provide exceptional legal representation while maintaining the highest standards of professionalism and ethical conduct. We believe that every client deserves not just legal expertise, but a trusted advisor who truly understands their unique circumstances.
@@ -150,9 +150,7 @@ export default function Home() {
               <p className="text-base text-muted-foreground font-serif">
                 Today, our team of accomplished attorneys continues this legacy, combining traditional values with innovative legal strategies to serve clients across a broad spectrum of practice areas.
               </p>
-               <blockquote className="border-l-4 border-accent pl-4 italic text-foreground/90 text-center pt-4">
-                "Excellence is not a destination, but a journey."
-              </blockquote>
+              <div className="pt-4"><div className="inline-flex items-center gap-3 text-[#1E3A8A]"><div className="w-12 h-px bg-[#A8915F]"></div><span className="font-serif italic text-lg">"Excellence is not a destination, but a journey."</span></div></div>
             </motion.div>
           </div>
           
@@ -210,7 +208,7 @@ export default function Home() {
                                     <AvatarImage src={attorney.image.imageUrl} alt={`Photo of ${attorney.name}`} data-ai-hint={attorney.image.imageHint} />
                                     <AvatarFallback>{attorney.name.split(' ').map(n => n[0]).join('')}</AvatarFallback>
                                 </Avatar>
-                            )}\
+                            )}
                             <div className="text-center sm:text-left">
                                 <CardHeader className="p-0">
                                     <div className="flex items-center justify-center sm:justify-start gap-3">
@@ -227,7 +225,7 @@ export default function Home() {
                             </div>
                         </Card>
                     </motion.div>
-                ))}\
+                ))}
             </div>
         </div>
       </section>
@@ -261,7 +259,7 @@ export default function Home() {
                         </div>
                         <div>
                           <h3 className="font-semibold text-base">Email Us</h3>
-                          <a href="mailto:contact@manrellaw.com" className="text-sm text-muted-foreground/90 hover:text-primary transition-colors">contact@manrellaw.com</a>
+                          <a href="mailto:contact@manerlaw.com" className="text-sm text-muted-foreground/90 hover:text-primary transition-colors">contact@manerlaw.com</a>
                         </div>
                       </div>
                       <div className="flex items-start gap-4">
@@ -304,7 +302,7 @@ export default function Home() {
             <div className="md:col-span-1">
               <Link href="#home" className="flex items-center gap-2 font-bold text-xl font-headline">
                 <Scale className="h-6 w-6" />
-                Manrel Law
+                Maner Law
               </Link>
               <p className="mt-4 text-sm text-primary-foreground/80">
                 Providing expert legal solutions with integrity and professionalism.
@@ -329,7 +327,7 @@ export default function Home() {
                 </li>
                 <li className="flex items-center gap-3">
                   <Mail className="h-5 w-5 flex-shrink-0" />
-                  <a href="mailto:contact@manrellaw.com" className="hover:text-white transition-colors">contact@manrellaw.com</a>
+                  <a href="mailto:contact@manerlaw.com" className="hover:text-white transition-colors">contact@manerlaw.com</a>
                 </li>
                 <li className="flex items-center gap-3">
                   <Phone className="h-5 w-5 flex-shrink-0" />
@@ -356,7 +354,7 @@ export default function Home() {
             </div>
           </div>
           <div className="mt-8 border-t border-primary-foreground/20 pt-8 text-center text-sm text-primary-foreground/70">
-            <p>&copy; {new Date().getFullYear()} Manrel Law. All Rights Reserved. Attorney Advertising.</p>
+            <p>&copy; {new Date().getFullYear()} Maner Law. All Rights Reserved. Attorney Advertising.</p>
             <p className="mt-2">Site developed and maintained by <a href="https://easywebtogo.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">easywebtogo.com</a></p>
           </div>
         </div>
