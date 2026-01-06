@@ -121,7 +121,7 @@ export default function Home() {
             </Button>
           </motion.div>
         </div>
-        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20">
+        <div className="absolute bottom-20 left-1/2 -translate-x-1/2 z-20">
             <Link href="#about">
                 <motion.div
                     animate={{ y: [0, 10, 0] }}
@@ -164,9 +164,7 @@ export default function Home() {
               <p className="text-base text-muted-foreground font-serif">
                 Today, our team of accomplished attorneys continues this legacy, combining traditional values with innovative legal strategies to serve clients across a broad spectrum of practice areas.
               </p>
-               <blockquote className="border-l-4 border-accent pl-4 italic text-foreground/90 text-center pt-4">
-                "Excellence is not a destination, but a journey."
-              </blockquote>
+              <div className="pt-4"><div className="inline-flex items-center gap-3 text-[#1E3A8A]"><div className="w-12 h-px bg-[#A8915F]"></div><span className="font-serif italic text-lg">"Excellence is not a destination, but a journey."</span></div></div>
             </motion.div>
           </div>
           
