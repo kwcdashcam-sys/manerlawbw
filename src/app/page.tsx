@@ -1,3 +1,4 @@
+"use client";
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
@@ -7,6 +8,7 @@ import { Briefcase, Gavel, HeartHandshake, ArrowRight, Home as HomeIcon, ScrollT
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { ContactForm } from '@/components/contact-form';
 import Map from '@/components/map';
+import { motion } from 'framer-motion';
 
 const practiceAreas = [
   {
@@ -61,6 +63,12 @@ const attorneys = [
 export default function Home() {
   const heroImage = PlaceHolderImages.find(p => p.id === 'hero-legal');
 
+  const fadeIn = {
+    initial: { opacity: 0, y: 20 },
+    animate: { opacity: 1, y: 0 },
+    transition: { duration: 0.5 }
+  };
+
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
@@ -77,15 +85,17 @@ export default function Home() {
           />
         )}
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-20 text-center">
-          <h1 className="text-3xl md:text-5xl font-headline font-bold tracking-tight mb-4 text-shadow">
+          <motion.h1 {...fadeIn} className="text-3xl md:text-5xl font-headline font-bold tracking-tight mb-4 text-shadow">
             Expert Legal Counsel for Your Peace of Mind
-          </h1>
-          <p className="text-md md:text-lg max-w-3xl mx-auto mb-6 text-shadow-sm">
+          </motion.h1>
+          <motion.p {...fadeIn} transition={{ delay: 0.2 }} className="text-md md:text-lg max-w-3xl mx-auto mb-6 text-shadow-sm">
             Manrel Law is dedicated to providing top-tier legal services with integrity and professionalism.
-          </p>
-          <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground">
-            <Link href="#contact">Schedule a Consultation</Link>
-          </Button>
+          </motion.p>
+          <motion.div {...fadeIn} transition={{ delay: 0.4 }}>
+            <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground">
+              <Link href="#contact">Schedule a Consultation</Link>
+            </Button>
+          </motion.div>
         </div>
       </section>
 
@@ -93,7 +103,7 @@ export default function Home() {
       <section id="about" className="py-12 md:py-20 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-10 items-center">
-            <div>
+            <motion.div {...fadeIn}>
               <h2 className="text-2xl md:text-3xl font-headline font-bold text-primary mb-4">
                 Decades of Legal Excellence
               </h2>
@@ -106,8 +116,8 @@ export default function Home() {
               <Button asChild variant="outline">
                 <Link href="#services">Discover Our Expertise <ArrowRight className="ml-2 h-4 w-4" /></Link>
               </Button>
-            </div>
-            <div className="bg-primary/10 p-6 rounded-lg">
+            </motion.div>
+            <motion.div {...fadeIn} transition={{ delay: 0.2 }} className="bg-primary/10 p-6 rounded-lg">
                 <blockquote className="border-l-4 border-accent pl-5 italic text-foreground/90">
                 "Our commitment is not just to the law, but to the people we serve. We stand by you every step of the way, ensuring your voice is heard and your rights are protected."
                 <footer className="mt-4 not-italic">
@@ -115,7 +125,7 @@ export default function Home() {
                     <span className="text-foreground/80"> Founding Partner</span>
                 </footer>
                 </blockquote>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -129,19 +139,21 @@ export default function Home() {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {practiceAreas.map((area, index) => (
-                    <Card key={index} className="flex flex-col shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-                        <CardHeader className="flex flex-row items-start gap-4">
-                            <div className="bg-primary/10 rounded-full p-3 flex-shrink-0">
-                                {area.icon}
-                            </div>
-                            <div className="flex-grow">
-                                <CardTitle className="font-headline text-xl">{area.title}</CardTitle>
-                            </div>
-                        </CardHeader>
-                        <CardContent className="flex-grow">
-                            <p className="text-sm text-foreground/80">{area.description}</p>
-                        </CardContent>
-                    </Card>
+                    <motion.div key={index} {...fadeIn} transition={{ delay: index * 0.1 }}>
+                        <Card className="flex flex-col shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 h-full">
+                            <CardHeader className="flex flex-row items-start gap-4">
+                                <div className="bg-primary/10 rounded-full p-3 flex-shrink-0">
+                                    {area.icon}
+                                </div>
+                                <div className="flex-grow">
+                                    <CardTitle className="font-headline text-xl">{area.title}</CardTitle>
+                                </div>
+                            </CardHeader>
+                            <CardContent className="flex-grow">
+                                <p className="text-sm text-foreground/80">{area.description}</p>
+                            </CardContent>
+                        </Card>
+                    </motion.div>
                 ))}
             </div>
         </div>
@@ -156,28 +168,30 @@ export default function Home() {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {attorneys.map((attorney, index) => (
-                    <Card key={index} className="flex flex-col sm:flex-row items-center p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
-                        {attorney.image && (
-                            <Avatar className="h-28 w-28 sm:h-36 sm:w-36 flex-shrink-0 mb-5 sm:mb-0 sm:mr-6 border-4 border-accent">
-                                <AvatarImage src={attorney.image.imageUrl} alt={`Photo of ${attorney.name}`} data-ai-hint={attorney.image.imageHint} />
-                                <AvatarFallback>{attorney.name.split(' ').map(n => n[0]).join('')}</AvatarFallback>
-                            </Avatar>
-                        )}
-                        <div className="text-center sm:text-left">
-                            <CardHeader className="p-0">
-                                <div className="flex items-center justify-center sm:justify-start gap-3">
-                                    <CardTitle className="font-headline text-xl text-primary">{attorney.name}</CardTitle>
-                                    <Link href={attorney.linkedin} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
-                                        <Linkedin size={18} />
-                                    </Link>
-                                </div>
-                                <CardDescription className="font-semibold text-accent text-base">{attorney.title}</CardDescription>
-                            </CardHeader>
-                            <CardContent className="p-0 mt-3">
-                                <p className="text-sm text-foreground/80">{attorney.bio}</p>
-                            </CardContent>
-                        </div>
-                    </Card>
+                    <motion.div key={index} {...fadeIn} transition={{ delay: index * 0.2 }}>
+                        <Card className="flex flex-col sm:flex-row items-center p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 h-full">
+                            {attorney.image && (
+                                <Avatar className="h-28 w-28 sm:h-36 sm:w-36 flex-shrink-0 mb-5 sm:mb-0 sm:mr-6 border-4 border-accent">
+                                    <AvatarImage src={attorney.image.imageUrl} alt={`Photo of ${attorney.name}`} data-ai-hint={attorney.image.imageHint} />
+                                    <AvatarFallback>{attorney.name.split(' ').map(n => n[0]).join('')}</AvatarFallback>
+                                </Avatar>
+                            )}
+                            <div className="text-center sm:text-left">
+                                <CardHeader className="p-0">
+                                    <div className="flex items-center justify-center sm:justify-start gap-3">
+                                        <CardTitle className="font-headline text-xl text-primary">{attorney.name}</CardTitle>
+                                        <Link href={attorney.linkedin} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+                                            <Linkedin size={18} />
+                                        </Link>
+                                    </div>
+                                    <CardDescription className="font-semibold text-accent text-base">{attorney.title}</CardDescription>
+                                </CardHeader>
+                                <CardContent className="p-0 mt-3">
+                                    <p className="text-sm text-foreground/80">{attorney.bio}</p>
+                                </CardContent>
+                            </div>
+                        </Card>
+                    </motion.div>
                 ))}
             </div>
         </div>
@@ -190,51 +204,53 @@ export default function Home() {
                 <h2 className="text-2xl md:text-3xl font-headline font-bold text-primary">Contact Us</h2>
                 <p className="mt-3 text-base md:text-lg text-foreground/80 max-w-2xl mx-auto">We're here to help. Reach out to us anytime.</p>
             </div>
-          <Card className="overflow-hidden shadow-2xl">
-            <CardContent className="p-0">
-              <div className="grid md:grid-cols-2">
-                <div className="p-6 md:p-10 bg-background">
-                  <h2 className="text-2xl font-headline font-bold text-primary mb-4">Get in Touch</h2>
-                  <p className="text-foreground/80 mb-6">
-                    Whether you have a question about our services or need to schedule a consultation, our team is ready to answer all your questions. Fill out the form, and we'll be in touch shortly.
-                  </p>
-                  <div className="space-y-5">
-                    <div className="flex items-start gap-4">
-                      <div className="flex-shrink-0 bg-primary/10 text-primary p-3 rounded-full">
-                        <MapPin className="h-5 w-5" />
+          <motion.div {...fadeIn}>
+            <Card className="overflow-hidden shadow-2xl">
+              <CardContent className="p-0">
+                <div className="grid md:grid-cols-2">
+                  <div className="p-6 md:p-10 bg-background">
+                    <h2 className="text-2xl font-headline font-bold text-primary mb-4">Get in Touch</h2>
+                    <p className="text-foreground/80 mb-6">
+                      Whether you have a question about our services or need to schedule a consultation, our team is ready to answer all your questions. Fill out the form, and we'll be in touch shortly.
+                    </p>
+                    <div className="space-y-5">
+                      <div className="flex items-start gap-4">
+                        <div className="flex-shrink-0 bg-primary/10 text-primary p-3 rounded-full">
+                          <MapPin className="h-5 w-5" />
+                        </div>
+                        <div>
+                          <h3 className="font-semibold text-base">Our Office</h3>
+                          <p className="text-sm text-foreground/80">123 Legal Ave, Suite 500<br/>Justice City, ST 12345</p>
+                        </div>
                       </div>
-                      <div>
-                        <h3 className="font-semibold text-base">Our Office</h3>
-                        <p className="text-sm text-foreground/80">123 Legal Ave, Suite 500<br/>Justice City, ST 12345</p>
+                      <div className="flex items-start gap-4">
+                        <div className="flex-shrink-0 bg-primary/10 text-primary p-3 rounded-full">
+                          <Mail className="h-5 w-5" />
+                        </div>
+                        <div>
+                          <h3 className="font-semibold text-base">Email Us</h3>
+                          <a href="mailto:contact@manrellaw.com" className="text-sm text-foreground/80 hover:text-primary transition-colors">contact@manrellaw.com</a>
+                        </div>
                       </div>
-                    </div>
-                    <div className="flex items-start gap-4">
-                      <div className="flex-shrink-0 bg-primary/10 text-primary p-3 rounded-full">
-                        <Mail className="h-5 w-5" />
-                      </div>
-                      <div>
-                        <h3 className="font-semibold text-base">Email Us</h3>
-                        <a href="mailto:contact@manrellaw.com" className="text-sm text-foreground/80 hover:text-primary transition-colors">contact@manrellaw.com</a>
-                      </div>
-                    </div>
-                    <div className="flex items-start gap-4">
-                      <div className="flex-shrink-0 bg-primary/10 text-primary p-3 rounded-full">
-                        <Phone className="h-5 w-5" />
-                      </div>
-                      <div>
-                        <h3 className="font-semibold text-base">Call Us</h3>
-                        <a href="tel:123-456-7890" className="text-sm text-foreground/80 hover:text-primary transition-colors">(123) 456-7890</a>
+                      <div className="flex items-start gap-4">
+                        <div className="flex-shrink-0 bg-primary/10 text-primary p-3 rounded-full">
+                          <Phone className="h-5 w-5" />
+                        </div>
+                        <div>
+                          <h3 className="font-semibold text-base">Call Us</h3>
+                          <a href="tel:123-456-7890" className="text-sm text-foreground/80 hover:text-primary transition-colors">(123) 456-7890</a>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
 
-                <div className="p-6 md:p-10">
-                  <ContactForm />
+                  <div className="p-6 md:p-10">
+                    <ContactForm />
+                  </div>
                 </div>
-              </div>
-            </CardContent>
-          </Card>
+              </CardContent>
+            </Card>
+          </motion.div>
         </div>
       </section>
       
@@ -244,9 +260,9 @@ export default function Home() {
             <div className="text-center mb-10">
                 <h2 className="text-2xl md:text-3xl font-headline font-bold text-primary">Reach Us</h2>
             </div>
-            <div className="w-full h-96 md:h-[500px] p-4">
+            <motion.div {...fadeIn} className="w-full h-96 md:h-[500px] p-4">
                 <Map />
-            </div>
+            </motion.div>
         </div>
       </section>
 
