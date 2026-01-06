@@ -2,9 +2,15 @@
   "placeholderImages": [
     {
       "id": "hero-legal",
-      "description": "A modern law office library with books on shelves.",
-      "imageUrl": "https://images.unsplash.com/photo-1423592707957-3b212afa6733?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxsYXclMjBib29rc3xlbnwwfHx8fDE3Njc1Mjc2ODh8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "law books"
+      "description": "A picture of the supreme court",
+      "imageUrl": "/images/onc-supreme-court.png",
+      "imageHint": "supreme court"
+    },
+    {
+      "id": "office-interior",
+      "description": "The exterior of a law office building with a sign that says 'LAW OFFICES'.",
+      "imageUrl": "/images/onc-supreme-court.png",
+      "imageHint": "law office sign"
     },
     {
       "id": "services-banner",

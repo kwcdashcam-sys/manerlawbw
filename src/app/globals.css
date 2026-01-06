@@ -8,19 +8,23 @@ body {
 
 @layer base {
   :root {
-    --background: 221 83% 98%;
-    --foreground: 222 47% 11%;
+    --light-bg: 207 100% 97%;
+    --text-dark: 224 64% 32%;
+    --text-muted: 215 19% 34%;
+    --primary: 223 62% 33%;
+    --accent: 41 30% 52%;
+
+    --background: var(--light-bg);
+    --foreground: var(--text-dark);
     --card: 0 0% 100%;
-    --card-foreground: 222 47% 11%;
+    --card-foreground: var(--text-dark);
     --popover: 0 0% 100%;
-    --popover-foreground: 222 47% 11%;
-    --primary: 216 56% 23%;
+    --popover-foreground: var(--text-dark);
     --primary-foreground: 210 40% 98%;
     --secondary: 210 40% 96.1%;
     --secondary-foreground: 222 47% 11%;
     --muted: 210 40% 96.1%;
-    --muted-foreground: 215 20% 65%;
-    --accent: 38 73% 54%;
+    --muted-foreground: var(--text-muted);
     --accent-foreground: 24 10% 10%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
@@ -35,25 +39,29 @@ body {
     --radius: 0.5rem;
   }
   .dark {
-    --background: 222 47% 11%;
-    --foreground: 210 40% 98%;
-    --card: 222 47% 11%;
-    --card-foreground: 210 40% 98%;
-    --popover: 222 47% 11%;
-    --popover-foreground: 210 40% 98%;
-    --primary: 38 73% 54%;
+    --light-bg: 223 62% 23%;
+    --text-dark: 207 100% 97%;
+    --text-muted: 215 19% 57%;
+    --primary: 43 29% 52%;
+    --accent: 207 100% 97%;
+
+    --background: var(--light-bg);
+    --foreground: var(--text-dark);
+    --card: 223 62% 23%;
+    --card-foreground: var(--text-dark);
+    --popover: 223 62% 23%;
+    --popover-foreground: var(--text-dark);
     --primary-foreground: 24 10% 10%;
-    --secondary: 217 33% 17%;
-    --secondary-foreground: 210 40% 98%;
-    --muted: 217 33% 17%;
-    --muted-foreground: 215 20% 65%;
-    --accent: 217 33% 17%;
-    --accent-foreground: 210 40% 98%;
-    --destructive: 0 62.8% 30.6%;
+    --secondary: 223 62% 28%;
+    --secondary-foreground: var(--text-dark);
+    --muted: 223 62% 28%;
+    --muted-foreground: var(--text-muted);
+    --accent-foreground: 223 62% 33%;
+    --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
-    --border: 217 33% 17%;
-    --input: 217 33% 17%;
-    --ring: 38 73% 54%;
+    --border: 223 62% 43%;
+    --input: 223 62% 43%;
+    --ring: 43 29% 52%;
     --chart-1: 220 70% 50%;
     --chart-2: 160 60% 45%;
     --chart-3: 30 80% 55%;
@@ -70,5 +78,3 @@ body {
     @apply bg-background text-foreground;
   }
 }
-
-    

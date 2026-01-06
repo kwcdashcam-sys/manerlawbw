@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
-import { Briefcase, Gavel, HeartHandshake, ArrowRight, Home as HomeIcon, ScrollText, Lightbulb, Linkedin, Mail, MapPin, Phone, Scale, Facebook, Twitter } from 'lucide-react';
+import { Briefcase, Gavel, HeartHandshake, ArrowRight, Home as HomeIcon, ScrollText, Lightbulb, Linkedin, Mail, MapPin, Phone, Scale, Facebook, Twitter, Award, Shield, Users } from 'lucide-react';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { ContactForm } from '@/components/contact-form';
 import Map from '@/components/map';
@@ -12,32 +12,32 @@ import { motion } from 'framer-motion';
 
 const practiceAreas = [
   {
-    icon: <Briefcase className="h-10 w-10 text-primary" />,
+    icon: <Briefcase className="h-7 w-7 text-muted" />,
     title: "Corporate Law",
     description: "Our corporate law team provides comprehensive legal support for businesses of all sizes. We assist with business formation, contract drafting and negotiation, mergers and acquisitions, corporate governance, and ensuring regulatory compliance. Let us be your strategic legal partner in the business world."
   },
   {
-    icon: <HomeIcon className="h-10 w-10 text-primary" />,
+    icon: <HomeIcon className="h-7 w-7 text-muted" />,
     title: "Real Estate Law",
     description: "Navigating the complexities of real estate transactions requires a knowledgeable guide. We handle everything from residential closings to complex commercial property deals, zoning issues, and landlord-tenant disputes. We protect your property interests at every turn."
   },
   {
-    icon: <HeartHandshake className="h-10 w-10 text-primary" />,
+    icon: <HeartHandshake className="h-7 w-7 text-muted" />,
     title: "Family Law",
     description: "We approach sensitive family matters with compassion and discretion. Our services cover divorce proceedings, child custody and support agreements, adoptions, and prenuptial agreements. We are committed to finding amicable solutions that prioritize the well-being of your family."
   },
   {
-    icon: <Gavel className="h-10 w-10 text-primary" />,
+    icon: <Gavel className="h-7 w-7 text-muted" />,
     title: "Criminal Defense",
     description: "When your freedom is on the line, you need a vigorous defense. Our experienced criminal defense attorneys represent clients facing a wide range of charges, from misdemeanors to serious felonies. We are dedicated to protecting your rights and ensuring a fair legal process."
   },
   {
-    icon: <ScrollText className="h-10 w-10 text-primary" />,
+    icon: <ScrollText className="h-7 w-7 text-muted" />,
     title: "Estate Planning",
     description: "Secure your legacy and protect your loved ones with our comprehensive estate planning services. We assist with the creation of wills, trusts, powers of attorney, and healthcare directives. Plan for the future with confidence and peace of mind."
   },
   {
-    icon: <Lightbulb className="h-10 w-10 text-primary" />,
+    icon: <Lightbulb className="h-7 w-7 text-muted" />,
     title: "Intellectual Property",
     description: "In today's innovation-driven economy, protecting your ideas is paramount. Our IP attorneys help clients secure patents, trademarks, and copyrights. We also handle licensing agreements and litigation to defend your intellectual property from infringement."
   },
@@ -60,8 +60,32 @@ const attorneys = [
   }
 ];
 
+const values = [
+  {
+    icon: <Scale className="h-8 w-8 text-accent" />,
+    title: "Integrity",
+    description: "Upholding the highest ethical standards in every case we undertake.",
+  },
+  {
+    icon: <Shield className="h-8 w-8 text-accent" />,
+    title: "Dedication",
+    description: "Committed to protecting our clients' interests with unwavering resolve.",
+  },
+  {
+    icon: <Award className="h-8 w-8 text-accent" />,
+    title: "Excellence",
+    description: "Pursuing exceptional outcomes through meticulous preparation and expertise.",
+  },
+  {
+    icon: <Users className="h-8 w-8 text-accent" />,
+    title: "Partnership",
+    description: "Building lasting relationships founded on trust and mutual respect.",
+  },
+]
+
 export default function Home() {
   const heroImage = PlaceHolderImages.find(p => p.id === 'hero-legal');
+  const officeImage = PlaceHolderImages.find(p => p.id === 'office-interior');
 
   const fadeIn = {
     initial: { opacity: 0, y: 20 },
@@ -92,7 +116,7 @@ export default function Home() {
             Manrel Law is dedicated to providing top-tier legal services with integrity and professionalism.
           </motion.p>
           <motion.div {...fadeIn} transition={{ delay: 0.4 }}>
-            <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground">
+            <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-muted">
               <Link href="#contact">Schedule a Consultation</Link>
             </Button>
           </motion.div>
@@ -102,55 +126,69 @@ export default function Home() {
       {/* Firm Overview Section */}
       <section id="about" className="py-12 md:py-20 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 gap-10 items-center">
+        <div className="text-center mb-20"><span className="text-[#A8915F] text-sm tracking-[0.3em] uppercase font-medium">About Our Firm</span><h2 className="text-4xl md:text-5xl font-serif text-[#1E3A8A] mt-4 mb-6">A Legacy of Legal Excellence</h2><div className="w-20 h-0.5 bg-[#A8915F] mx-auto"></div></div>
+          
+          <div className="grid lg:grid-cols-2 gap-16 items-center mb-24">
             <motion.div {...fadeIn}>
-              <h2 className="text-2xl md:text-3xl font-headline font-bold text-primary mb-4">
-                Decades of Legal Excellence
-              </h2>
-              <p className="mb-4 text-base md:text-lg text-foreground/80">
-                Manrel Law was founded on the principles of justice, diligence, and unwavering client advocacy. For over 20 years, our firm has been a pillar of the community, offering expert legal guidance across a wide spectrum of practice areas.
-              </p>
-              <p className="mb-6 text-base md:text-lg text-foreground/80">
-                Our mission is to demystify the legal process, providing clear, strategic, and effective solutions tailored to each client's unique situation. We believe in building lasting relationships based on trust and achieving the best possible outcomes.
-              </p>
-              <Button asChild variant="outline">
-                <Link href="#services">Discover Our Expertise <ArrowRight className="ml-2 h-4 w-4" /></Link>
-              </Button>
+              {officeImage && (
+                <Image 
+                  src={officeImage.imageUrl}
+                  alt={officeImage.description}
+                  width={600}
+                  height={400}
+                  className="rounded-lg shadow-lg object-cover"
+                />
+              )}
             </motion.div>
-            <motion.div {...fadeIn} transition={{ delay: 0.2 }} className="bg-primary/10 p-6 rounded-lg">
-                <blockquote className="border-l-4 border-accent pl-5 italic text-foreground/90">
-                "Our commitment is not just to the law, but to the people we serve. We stand by you every step of the way, ensuring your voice is heard and your rights are protected."
-                <footer className="mt-4 not-italic">
-                    <span className="font-bold text-primary">Ashish Manral,</span>
-                    <span className="text-foreground/80"> Founding Partner</span>
-                </footer>
-                </blockquote>
+            <motion.div {...fadeIn} transition={{ delay: 0.2 }} className="space-y-4">
+              <p className="text-base text-muted-foreground font-serif">
+                For nearly four decades, Manrel Law has stood as a pillar of legal excellence in our community. Founded in 1985 by Jonathan Manrel, our firm has grown from a small practice into a distinguished institution known for its principled approach to law.
+              </p>
+              <p className="text-base text-muted-foreground font-serif">
+                Our mission is clear: to provide exceptional legal representation while maintaining the highest standards of professionalism and ethical conduct. We believe that every client deserves not just legal expertise, but a trusted advisor who truly understands their unique circumstances.
+              </p>
+              <p className="text-base text-muted-foreground font-serif">
+                Today, our team of accomplished attorneys continues this legacy, combining traditional values with innovative legal strategies to serve clients across a broad spectrum of practice areas.
+              </p>
+               <blockquote className="border-l-4 border-accent pl-4 italic text-foreground/90 text-center pt-4">
+                "Excellence is not a destination, but a journey."
+              </blockquote>
             </motion.div>
           </div>
+          
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16 text-center">
+            {values.map((value, index) => (
+              <motion.div key={index} {...fadeIn} transition={{delay: 0.4 + index * 0.1}}>
+                <div className="flex justify-center items-center h-16 w-16 rounded-full bg-primary/10 mx-auto mb-4">
+                  {value.icon}
+                </div>
+                <h3 className="font-headline font-bold text-lg text-primary">{value.title}</h3>
+                <p className="text-sm text-muted-foreground/95 mt-1">{value.description}</p>
+              </motion.div>
+            ))}
+          </div>
+
         </div>
       </section>
       
       {/* Practice Areas Section */}
-      <section id="services" className="py-12 md:py-20 bg-secondary">
+      <section id="services" className="py-12 md:py-20 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-10">
-                <h2 className="text-2xl md:text-3xl font-headline font-bold text-primary">Our Legal Expertise</h2>
-                <p className="mt-3 text-base md:text-lg text-foreground/80 max-w-2xl mx-auto">Comprehensive Services for Every Legal Need</p>
-            </div>
+        <div className="text-center mb-20" ><span className="text-[#A8915F] text-sm tracking-[0.3em] uppercase font-medium">Our Expertise</span><h2 className="text-4xl md:text-5xl font-serif text-[#1E3A8A] mt-4 mb-6">Practice Areas</h2><div className="w-20 h-0.5 bg-[#A8915F] mx-auto mb-6"></div><p className="text-muted-foreground max-w-2xl mx-auto">Our attorneys bring decades of combined experience across diverse legal disciplines, providing comprehensive counsel tailored to your specific needs.</p></div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {practiceAreas.map((area, index) => (
                     <motion.div key={index} {...fadeIn} transition={{ delay: index * 0.1 }}>
-                        <Card className="flex flex-col shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 h-full">
-                            <CardHeader className="flex flex-row items-start gap-4">
-                                <div className="bg-primary/10 rounded-full p-3 flex-shrink-0">
+                        <Card className="h-full p-8 bg-[#F0F9FF] rounded-sm border border-transparent hover:border-[#A8915F]/20 hover:shadow-xl transition-all duration-500">
+                            <CardHeader className="flex flex-col items-start gap-2">
+                                <div className="bg-primary rounded-full p-3 flex-shrink-0">
                                     {area.icon}
                                 </div>
                                 <div className="flex-grow">
-                                    <CardTitle className="font-headline text-xl">{area.title}</CardTitle>
+                                    <CardTitle className="text-xl font-normal font-serif text-[#1E3A8A] group-hover:text-[#A8915F] transition-colors duration-300">{area.title}</CardTitle>
                                 </div>
                             </CardHeader>
                             <CardContent className="flex-grow">
-                                <p className="text-sm text-foreground/80">{area.description}</p>
+                                <p className="text-sm text-muted-foreground">{area.description}</p>
                             </CardContent>
                         </Card>
                     </motion.div>
@@ -162,10 +200,7 @@ export default function Home() {
       {/* Attorney Profiles Preview */}
       <section id="attorneys" className="py-12 md:py-20 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-10">
-                <h2 className="text-2xl md:text-3xl font-headline font-bold text-primary">Our Legal Professionals</h2>
-                <p className="mt-2 text-base md:text-lg text-foreground/80 max-w-2xl mx-auto">Experience, Dedication, and Excellence</p>
-            </div>
+        <div className="text-center mb-20" ><span className="text-[#A8915F] text-sm tracking-[0.3em] uppercase font-medium">Our Team</span><h2 className="text-4xl md:text-5xl font-serif text-[#1E3A8A] mt-4 mb-6">Meet Our Attorneys</h2><div className="w-20 h-0.5 bg-[#A8915F] mx-auto mb-6"></div><p className="text-slate-600 max-w-2xl mx-auto text-lg">Our distinguished team combines deep legal knowledge with genuine dedication to achieving the best outcomes for our clients.</p></div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {attorneys.map((attorney, index) => (
                     <motion.div key={index} {...fadeIn} transition={{ delay: index * 0.2 }}>
@@ -175,7 +210,7 @@ export default function Home() {
                                     <AvatarImage src={attorney.image.imageUrl} alt={`Photo of ${attorney.name}`} data-ai-hint={attorney.image.imageHint} />
                                     <AvatarFallback>{attorney.name.split(' ').map(n => n[0]).join('')}</AvatarFallback>
                                 </Avatar>
-                            )}
+                            )}\
                             <div className="text-center sm:text-left">
                                 <CardHeader className="p-0">
                                     <div className="flex items-center justify-center sm:justify-start gap-3">
@@ -192,25 +227,22 @@ export default function Home() {
                             </div>
                         </Card>
                     </motion.div>
-                ))}
+                ))}\
             </div>
         </div>
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-12 md:py-20 bg-secondary">
+      <section id="contact" className="py-12 md:py-20 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-10">
-                <h2 className="text-2xl md:text-3xl font-headline font-bold text-primary">Contact Us</h2>
-                <p className="mt-3 text-base md:text-lg text-foreground/80 max-w-2xl mx-auto">We're here to help. Reach out to us anytime.</p>
-            </div>
+        <div className="text-center mb-20" ><span className="text-[#A8915F] text-sm tracking-[0.3em] uppercase font-medium">Get In Touch</span><h2 className="text-4xl md:text-5xl font-serif text-[#1E3A8A] mt-4 mb-6">Contact Us</h2><div className="w-20 h-0.5 bg-[#A8915F] mx-auto mb-6"></div><p className="text-slate-600 max-w-2xl mx-auto text-lg">Ready to discuss your legal needs? Our team is here to help. Reach out to schedule a confidential consultation.</p></div>
           <motion.div {...fadeIn}>
             <Card className="overflow-hidden shadow-2xl">
               <CardContent className="p-0">
                 <div className="grid md:grid-cols-2">
-                  <div className="p-6 md:p-10 bg-background">
-                    <h2 className="text-2xl font-headline font-bold text-primary mb-4">Get in Touch</h2>
-                    <p className="text-foreground/80 mb-6">
+                  <div className="p-6 md:p-10 bg-white">
+                    <h2 className="text-2xl font-headline text-primary mb-4">Get in Touch</h2>
+                    <p className="text-muted-foreground/90 mb-6">
                       Whether you have a question about our services or need to schedule a consultation, our team is ready to answer all your questions. Fill out the form, and we'll be in touch shortly.
                     </p>
                     <div className="space-y-5">
@@ -220,7 +252,7 @@ export default function Home() {
                         </div>
                         <div>
                           <h3 className="font-semibold text-base">Our Office</h3>
-                          <p className="text-sm text-foreground/80">123 Legal Ave, Suite 500<br/>Justice City, ST 12345</p>
+                          <p className="text-sm text-muted-foreground/90">123 Legal Ave, Suite 500<br/>Justice City, ST 12345</p>
                         </div>
                       </div>
                       <div className="flex items-start gap-4">
@@ -229,7 +261,7 @@ export default function Home() {
                         </div>
                         <div>
                           <h3 className="font-semibold text-base">Email Us</h3>
-                          <a href="mailto:contact@manrellaw.com" className="text-sm text-foreground/80 hover:text-primary transition-colors">contact@manrellaw.com</a>
+                          <a href="mailto:contact@manrellaw.com" className="text-sm text-muted-foreground/90 hover:text-primary transition-colors">contact@manrellaw.com</a>
                         </div>
                       </div>
                       <div className="flex items-start gap-4">
@@ -238,7 +270,7 @@ export default function Home() {
                         </div>
                         <div>
                           <h3 className="font-semibold text-base">Call Us</h3>
-                          <a href="tel:123-456-7890" className="text-sm text-foreground/80 hover:text-primary transition-colors">(123) 456-7890</a>
+                          <a href="tel:123-456-7890" className="text-sm text-muted-foreground/90 hover:text-primary transition-colors">(123) 456-7890</a>
                         </div>
                       </div>
                     </div>
@@ -257,9 +289,8 @@ export default function Home() {
       {/* Map Section */}
       <section id="map" className="py-12 md:py-20 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-10">
-                <h2 className="text-2xl md:text-3xl font-headline font-bold text-primary">Reach Us</h2>
-            </div>
+        <div className="text-center mb-20" ><span className="text-[#A8915F] text-sm tracking-[0.3em] uppercase font-medium">Meet In Person</span><h2 className="text-4xl md:text-5xl font-serif text-[#1E3A8A] mt-4 mb-6">Reach Us</h2><div className="w-20 h-0.5 bg-[#A8915F] mx-auto mb-6"></div><p className="text-slate-600 max-w-2xl mx-auto text-lg">More comfortable to disucss your case in person</p></div>
+         
             <motion.div {...fadeIn} className="w-full h-96 md:h-[500px] p-4">
                 <Map />
             </motion.div>

@@ -45,7 +45,7 @@ export function Header() {
     <header
       className={cn(
         'sticky top-0 z-50 w-full transition-all duration-300',
-        'bg-background/95 shadow-md backdrop-blur-sm',
+        'bg-white shadow-md backdrop-blur-sm',
         'text-primary'
       )}
     >
@@ -71,7 +71,7 @@ export function Header() {
           ))}
         </nav>
         <div className="hidden md:block">
-            <Button asChild className="bg-accent hover:bg-accent/90 text-accent-foreground">
+            <Button asChild className="bg-accent hover:bg-accent/90 text-muted">
                 <Link href="#contact">Free Consultation</Link>
             </Button>
         </div>
@@ -102,7 +102,7 @@ export function Header() {
                     </Link>
                   ))}
                 </nav>
-                 <Button asChild className="w-full mt-8 bg-accent hover:bg-accent/90 text-accent-foreground">
+                 <Button asChild className="w-full mt-8 bg-accent hover:bg-accent/90 text-muted">
                     <Link href="#contact">Free Consultation</Link>
                 </Button>
               </div>
