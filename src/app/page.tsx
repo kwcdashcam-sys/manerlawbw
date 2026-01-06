@@ -1,10 +1,10 @@
-"use client";
+'use client';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
-import { Briefcase, Gavel, HeartHandshake, ArrowRight, Home as HomeIcon, ScrollText, Lightbulb, Linkedin, Mail, MapPin, Phone, Scale, Facebook, Twitter, Award, Shield, Users } from 'lucide-react';
+import { Briefcase, Gavel, HeartHandshake, ArrowRight, Home as HomeIcon, ScrollText, Lightbulb, Linkedin, Mail, MapPin, Phone, Scale, Facebook, Twitter, Award, Shield, Users, ChevronDown } from 'lucide-react';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { ContactForm } from '@/components/contact-form';
 import Map from '@/components/map';
@@ -96,7 +96,7 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
-      <section id="home" className="relative h-[50vh] min-h-[350px] text-white flex items-center">
+      <section id="home" className="relative h-screen text-white flex items-center">
         <div className="absolute inset-0 bg-primary/80 z-10" />
         {heroImage && (
           <Image
@@ -120,6 +120,20 @@ export default function Home() {
               <Link href="#contact">Schedule a Consultation</Link>
             </Button>
           </motion.div>
+        </div>
+        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20">
+            <Link href="#about">
+                <motion.div
+                    animate={{ y: [0, 10, 0] }}
+                    transition={{
+                        duration: 1.5,
+                        repeat: Infinity,
+                        repeatType: "loop",
+                    }}
+                >
+                    <ChevronDown className="h-10 w-10" />
+                </motion.div>
+            </Link>
         </div>
       </section>
 
@@ -150,7 +164,9 @@ export default function Home() {
               <p className="text-base text-muted-foreground font-serif">
                 Today, our team of accomplished attorneys continues this legacy, combining traditional values with innovative legal strategies to serve clients across a broad spectrum of practice areas.
               </p>
-              <div className="pt-4"><div className="inline-flex items-center gap-3 text-[#1E3A8A]"><div className="w-12 h-px bg-[#A8915F]"></div><span className="font-serif italic text-lg">"Excellence is not a destination, but a journey."</span></div></div>
+               <blockquote className="border-l-4 border-accent pl-4 italic text-foreground/90 text-center pt-4">
+                "Excellence is not a destination, but a journey."
+              </blockquote>
             </motion.div>
           </div>
           
@@ -300,9 +316,8 @@ export default function Home() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-10">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div className="md:col-span-1">
-              <Link href="#home" className="flex items-center gap-2 font-bold text-xl font-headline">
-                <Scale className="h-6 w-6" />
-                Maner Law
+              <Link href="#home">
+                <Image src="/logo.png" alt="Maner Law Logo" width={200} height={53} />
               </Link>
               <p className="mt-4 text-sm text-primary-foreground/80">
                 Providing expert legal solutions with integrity and professionalism.
