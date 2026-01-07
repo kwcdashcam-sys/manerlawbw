@@ -121,26 +121,26 @@ export default function Home() {
             </Button>
           </motion.div>
         </div>
-        <div className="absolute bottom-20 left-1/2 -translate-x-1/2 z-20">
-            <Link href="#about">
-                <motion.div
-                    animate={{ y: [0, 10, 0] }}
-                    transition={{
-                        duration: 1.5,
-                        repeat: Infinity,
-                        repeatType: "loop",
-                    }}
-                >
-                    <ChevronDown className="h-10 w-10" />
-                </motion.div>
-            </Link>
+        <div className="absolute bottom-10 md:bottom-20 left-1/2 -translate-x-1/2 z-20">
+          <Link href="#about">
+            <motion.div
+              animate={{ y: [0, 10, 0] }}
+              transition={{
+                duration: 1.5,
+                repeat: Infinity,
+                repeatType: "loop",
+              }}
+            >
+              <ChevronDown className="h-10 w-10" />
+            </motion.div>
+          </Link>
         </div>
       </section>
 
       {/* Firm Overview Section */}
       <section id="about" className="py-12 md:py-20 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-20"><span className="text-[#A8915F] text-sm tracking-[0.3em] uppercase font-medium">About Our Firm</span><h2 className="text-4xl md:text-5xl font-serif text-[#1E3A8A] mt-4 mb-6">A Legacy of Legal Excellence</h2><div className="w-20 h-0.5 bg-[#A8915F] mx-auto"></div></div>
+          <div className="text-center mb-20"><span className="text-[#A8915F] text-sm tracking-[0.3em] uppercase font-medium">About Our Firm</span><h2 className="text-4xl md:text-5xl font-serif text-[#1E3A8A] mt-4 mb-6">A Legacy of Legal Excellence</h2><div className="w-20 h-0.5 bg-[#A8915F] mx-auto"></div></div>
           
           <div className="grid lg:grid-cols-2 gap-16 items-center mb-24">
             <motion.div {...fadeIn}>
@@ -179,32 +179,31 @@ export default function Home() {
               </motion.div>
             ))}
           </div>
-
         </div>
       </section>
       
       {/* Practice Areas Section */}
       <section id="services" className="py-12 md:py-20 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-20" ><span className="text-[#A8915F] text-sm tracking-[0.3em] uppercase font-medium">Our Expertise</span><h2 className="text-4xl md:text-5xl font-serif text-[#1E3A8A] mt-4 mb-6">Practice Areas</h2><div className="w-20 h-0.5 bg-[#A8915F] mx-auto mb-6"></div><p className="text-muted-foreground max-w-2xl mx-auto">Our attorneys bring decades of combined experience across diverse legal disciplines, providing comprehensive counsel tailored to your specific needs.</p></div>
+          <div className="text-center mb-20" ><span className="text-[#A8915F] text-sm tracking-[0.3em] uppercase font-medium">Our Expertise</span><h2 className="text-4xl md:text-5xl font-serif text-[#1E3A8A] mt-4 mb-6">Practice Areas</h2><div className="w-20 h-0.5 bg-[#A8915F] mx-auto mb-6"></div><p className="text-muted-foreground max-w-2xl mx-auto">Our attorneys bring decades of combined experience across diverse legal disciplines, providing comprehensive counsel tailored to your specific needs.</p></div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {practiceAreas.map((area, index) => (
-                    <motion.div key={index} {...fadeIn} transition={{ delay: index * 0.1 }}>
-                        <Card className="h-full p-8 bg-[#F0F9FF] rounded-sm border border-transparent hover:border-[#A8915F]/20 hover:shadow-xl transition-all duration-500">
-                            <CardHeader className="flex flex-col items-start gap-2">
-                                <div className="bg-primary rounded-full p-3 flex-shrink-0">
-                                    {area.icon}
-                                </div>
-                                <div className="flex-grow">
-                                    <CardTitle className="text-xl font-normal font-serif text-[#1E3A8A] group-hover:text-[#A8915F] transition-colors duration-300">{area.title}</CardTitle>
-                                </div>
-                            </CardHeader>
-                            <CardContent className="flex-grow">
-                                <p className="text-sm text-muted-foreground">{area.description}</p>
-                            </CardContent>
-                        </Card>
-                    </motion.div>
-                ))}
+              {practiceAreas.map((area, index) => (
+                <motion.div key={index} {...fadeIn} transition={{ delay: index * 0.1 }}>
+                  <Card className="h-full p-8 bg-[#F0F9FF] rounded-sm border border-transparent hover:border-[#A8915F]/20 hover:shadow-xl transition-all duration-500">
+                    <CardHeader className="flex flex-col items-start gap-2">
+                      <div className="bg-primary rounded-full p-3 flex-shrink-0">
+                        {area.icon}
+                      </div>
+                      <div className="flex-grow">
+                        <CardTitle className="text-xl font-normal font-serif text-[#1E3A8A] group-hover:text-[#A8915F] transition-colors duration-300">{area.title}</CardTitle>
+                      </div>
+                    </CardHeader>
+                    <CardContent className="flex-grow">
+                      <p className="text-sm text-muted-foreground">{area.description}</p>
+                    </CardContent>
+                  </Card>
+                </motion.div>
+              ))}
             </div>
         </div>
       </section>
@@ -212,34 +211,34 @@ export default function Home() {
       {/* Attorney Profiles Preview */}
       <section id="attorneys" className="py-12 md:py-20 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-20" ><span className="text-[#A8915F] text-sm tracking-[0.3em] uppercase font-medium">Our Team</span><h2 className="text-4xl md:text-5xl font-serif text-[#1E3A8A] mt-4 mb-6">Meet Our Attorneys</h2><div className="w-20 h-0.5 bg-[#A8915F] mx-auto mb-6"></div><p className="text-slate-600 max-w-2xl mx-auto text-lg">Our distinguished team combines deep legal knowledge with genuine dedication to achieving the best outcomes for our clients.</p></div>
+          <div className="text-center mb-20" ><span className="text-[#A8915F] text-sm tracking-[0.3em] uppercase font-medium">Our Team</span><h2 className="text-4xl md:text-5xl font-serif text-[#1E3A8A] mt-4 mb-6">Meet Our Attorneys</h2><div className="w-20 h-0.5 bg-[#A8915F] mx-auto mb-6"></div><p className="text-slate-600 max-w-2xl mx-auto text-lg">Our distinguished team combines deep legal knowledge with genuine dedication to achieving the best outcomes for our clients.</p></div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                {attorneys.map((attorney, index) => (
-                    <motion.div key={index} {...fadeIn} transition={{ delay: index * 0.2 }}>
-                        <Card className="flex flex-col sm:flex-row items-center p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 h-full">
-                            {attorney.image && (
-                                <Avatar className="h-28 w-28 sm:h-36 sm:w-36 flex-shrink-0 mb-5 sm:mb-0 sm:mr-6 border-4 border-accent">
-                                    <AvatarImage src={attorney.image.imageUrl} alt={`Photo of ${attorney.name}`} data-ai-hint={attorney.image.imageHint} />
-                                    <AvatarFallback>{attorney.name.split(' ').map(n => n[0]).join('')}</AvatarFallback>
-                                </Avatar>
-                            )}
-                            <div className="text-center sm:text-left">
-                                <CardHeader className="p-0">
-                                    <div className="flex items-center justify-center sm:justify-start gap-3">
-                                        <CardTitle className="font-headline text-xl text-primary">{attorney.name}</CardTitle>
-                                        <Link href={attorney.linkedin} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
-                                            <Linkedin size={18} />
-                                        </Link>
-                                    </div>
-                                    <CardDescription className="font-semibold text-accent text-base">{attorney.title}</CardDescription>
-                                </CardHeader>
-                                <CardContent className="p-0 mt-3">
-                                    <p className="text-sm text-foreground/80">{attorney.bio}</p>
-                                </CardContent>
-                            </div>
-                        </Card>
-                    </motion.div>
-                ))}
+              {attorneys.map((attorney, index) => (
+                <motion.div key={index} {...fadeIn} transition={{ delay: index * 0.2 }}>
+                  <Card className="flex flex-col sm:flex-row items-center p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 h-full">
+                    {attorney.image && (
+                      <Avatar className="h-28 w-28 sm:h-36 sm:w-36 flex-shrink-0 mb-5 sm:mb-0 sm:mr-6 border-4 border-accent">
+                        <AvatarImage src={attorney.image.imageUrl} alt={`Photo of ${attorney.name}`} data-ai-hint={attorney.image.imageHint} />
+                        <AvatarFallback>{attorney.name.split(' ').map(n => n[0]).join('')}</AvatarFallback>
+                      </Avatar>
+                    )}
+                    <div className="text-center sm:text-left">
+                      <CardHeader className="p-0">
+                        <div className="flex items-center justify-center sm:justify-start gap-3">
+                          <CardTitle className="font-headline text-xl text-primary">{attorney.name}</CardTitle>
+                          <Link href={attorney.linkedin} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+                            <Linkedin size={18} />
+                          </Link>
+                        </div>
+                        <CardDescription className="font-semibold text-accent text-base">{attorney.title}</CardDescription>
+                      </CardHeader>
+                      <CardContent className="p-0 mt-3">
+                        <p className="text-sm text-foreground/80">{attorney.bio}</p>
+                      </CardContent>
+                    </div>
+                  </Card>
+                </motion.div>
+              ))}
             </div>
         </div>
       </section>
@@ -247,7 +246,7 @@ export default function Home() {
       {/* Contact Section */}
       <section id="contact" className="py-12 md:py-20 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-20" ><span className="text-[#A8915F] text-sm tracking-[0.3em] uppercase font-medium">Get In Touch</span><h2 className="text-4xl md:text-5xl font-serif text-[#1E3A8A] mt-4 mb-6">Contact Us</h2><div className="w-20 h-0.5 bg-[#A8915F] mx-auto mb-6"></div><p className="text-slate-600 max-w-2xl mx-auto text-lg">Ready to discuss your legal needs? Our team is here to help. Reach out to schedule a confidential consultation.</p></div>
+          <div className="text-center mb-20" ><span className="text-[#A8915F] text-sm tracking-[0.3em] uppercase font-medium">Get In Touch</span><h2 className="text-4xl md:text-5xl font-serif text-[#1E3A8A] mt-4 mb-6">Contact Us</h2><div className="w-20 h-0.5 bg-[#A8915F] mx-auto mb-6"></div><p className="text-slate-600 max-w-2xl mx-auto text-lg">Ready to discuss your legal needs? Our team is here to help. Reach out to schedule a confidential consultation.</p></div>
           <motion.div {...fadeIn}>
             <Card className="overflow-hidden shadow-2xl">
               <CardContent className="p-0">
@@ -301,7 +300,7 @@ export default function Home() {
       {/* Map Section */}
       <section id="map" className="py-12 md:py-20 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-20" ><span className="text-[#A8915F] text-sm tracking-[0.3em] uppercase font-medium">Meet In Person</span><h2 className="text-4xl md:text-5xl font-serif text-[#1E3A8A] mt-4 mb-6">Reach Us</h2><div className="w-20 h-0.5 bg-[#A8915F] mx-auto mb-6"></div><p className="text-slate-600 max-w-2xl mx-auto text-lg">More comfortable to disucss your case in person</p></div>
+          <div className="text-center mb-20" ><span className="text-[#A8915F] text-sm tracking-[0.3em] uppercase font-medium">Meet In Person</span><h2 className="text-4xl md:text-5xl font-serif text-[#1E3A8A] mt-4 mb-6">Reach Us</h2><div className="w-20 h-0.5 bg-[#A8915F] mx-auto mb-6"></div><p className="text-slate-600 max-w-2xl mx-auto text-lg">More comfortable to discuss your case in person</p></div>
          
             <motion.div {...fadeIn} className="w-full h-96 md:h-[500px] p-4">
                 <Map />
