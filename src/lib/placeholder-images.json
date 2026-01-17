@@ -3,13 +3,13 @@
     {
       "id": "hero-legal",
       "description": "A picture of the supreme court",
-      "imageUrl": "/images/onc-supreme-court.png",
+      "imageUrl": "/images/ocj-toronto.png",
       "imageHint": "supreme court"
     },
     {
       "id": "office-interior",
       "description": "The exterior of a law office building with a sign that says 'LAW OFFICES'.",
-      "imageUrl": "/images/onc-supreme-court.png",
+      "imageUrl": "/images/law-office.jpg",
       "imageHint": "law office sign"
     },
     {
