@@ -161,7 +161,7 @@ export default function Home() {
       </section>
       
       {/* Practice Areas Section */}
-      <section id="services" className="py-12 md:py-20 bg-white">
+      <section id="practice-areas" className="py-12 md:py-20 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20" ><span className="text-[#A8915F] text-sm tracking-[0.3em] uppercase font-medium">Our Expertise</span><h2 className="text-4xl md:text-5xl font-serif text-[#1E3A8A] mt-4 mb-6">Practice Areas</h2><div className="w-20 h-0.5 bg-[#A8915F] mx-auto mb-6"></div><p className="text-muted-foreground max-w-2xl mx-auto">Our attorneys bring decades of combined experience across diverse legal disciplines, providing comprehensive counsel tailored to your specific needs.</p></div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -268,7 +268,7 @@ export default function Home() {
               <ul className="mt-4 space-y-2 text-sm">
                 <li><Link href="#home" className="text-primary-foreground/80 hover:text-white transition-colors">Home</Link></li>
                 <li><Link href="#about" className="text-primary-foreground/80 hover:text-white transition-colors">About Us</Link></li>
-                <li><Link href="#services" className="text-primary-foreground/80 hover:text-white transition-colors">Services</Link></li>
+                <li><Link href="#practice-areas" className="text-primary-foreground/80 hover:text-white transition-colors">Practice Areas</Link></li>
                 <li><Link href="#contact" className="text-primary-foreground/80 hover:text-white transition-colors">Contact</Link></li>
               </ul>
             </div>
