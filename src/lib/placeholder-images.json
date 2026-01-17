@@ -17,36 +17,6 @@
       "description": "An architectural shot of a modern office building.",
       "imageUrl": "https://images.unsplash.com/photo-1560179707-f14e90ef3623?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxvZmZpY2UlMjBidWlsZGluZ3xlbnwwfHx8fDE3Njc1NzM1MzV8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "office building"
-    },
-    {
-      "id": "attorney-1",
-      "description": "Portrait of a female lawyer in professional attire.",
-      "imageUrl": "https://images.unsplash.com/photo-1584556326561-c8746083993b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHx3b21hbiUyMGxhd3llcnxlbnwwfHx8fDE3Njc1NzM1MzV8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "woman lawyer"
-    },
-    {
-      "id": "attorney-2",
-      "description": "Portrait of a male lawyer in a suit.",
-      "imageUrl": "https://images.unsplash.com/photo-1605602517229-cdbfc3dfb70c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxtYW4lMjBsYXd5ZXJ8ZW58MHx8fHwxNzY3NTczNTM1fDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "man lawyer"
-    },
-    {
-      "id": "attorney-3",
-      "description": "Professional headshot of a lawyer.",
-      "imageUrl": "https://images.unsplash.com/photo-1749756431175-16b96e53392d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxsYXd5ZXIlMjBwb3J0cmFpdHxlbnwwfHx8fDE3Njc1NzM1MzV8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "lawyer portrait"
-    },
-    {
-      "id": "attorney-4",
-      "description": "Portrait of a friendly looking lawyer.",
-      "imageUrl": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxwcm9mZXNzaW9uYWwlMjBwZXJzb258ZW58MHx8fHwxNzY3NTY2NDUyfDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "professional person"
-    },
-    {
-      "id": "contact-banner",
-      "description": "The interior of a modern and bright office lobby.",
-      "imageUrl": "https://images.unsplash.com/photo-1559136555-9303baea8ebd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxtb2Rlcm4lMjBvZmZpY2V8ZW58MHx8fHwxNzY3NDkwNjQ3fDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "modern office"
     }
   ]
 }

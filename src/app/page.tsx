@@ -206,7 +206,7 @@ export default function Home() {
                         </div>
                         <div>
                           <h3 className="font-semibold text-base">Our Office</h3>
-                          <p className="text-sm text-muted-foreground/90">123 Legal Ave, Suite 500<br/>Justice City, ST 12345</p>
+                          <p className="text-sm text-muted-foreground/90">100 King St W Suite #5700<br/>Toronto, ON M5X 1C7</p>
                         </div>
                       </div>
                       <div className="flex items-start gap-4">
@@ -224,7 +224,7 @@ export default function Home() {
                         </div>
                         <div>
                           <h3 className="font-semibold text-base">Call Us</h3>
-                          <a href="tel:123-456-7890" className="text-sm text-muted-foreground/90 hover:text-primary transition-colors">(123) 456-7890</a>
+                          <a href="tel:+14374240886" className="text-sm text-muted-foreground/90 hover:text-primary transition-colors">+14374240886</a>
                         </div>
                       </div>
                     </div>
@@ -277,7 +277,7 @@ export default function Home() {
               <ul className="mt-4 space-y-3 text-sm text-primary-foreground/80">
                 <li className="flex items-start gap-3">
                   <MapPin className="h-5 w-5 mt-1 flex-shrink-0" />
-                  <span>123 Legal Ave, Suite 500<br/>Justice City, ST 12345</span>
+                  <span>100 King St W Suite #5700<br/>Toronto, ON M5X 1C7</span>
                 </li>
                 <li className="flex items-center gap-3">
                   <Mail className="h-5 w-5 flex-shrink-0" />
@@ -285,7 +285,7 @@ export default function Home() {
                 </li>
                 <li className="flex items-center gap-3">
                   <Phone className="h-5 w-5 flex-shrink-0" />
-                  <a href="tel:123-456-7890" className="hover:text-white transition-colors">(123) 456-7890</a>
+                  <a href="tel:+14374240886" className="hover:text-white transition-colors">+14374240886</a>
                 </li>
               </ul>
             </div>
@@ -310,6 +310,7 @@ export default function Home() {
           <div className="mt-8 border-t border-primary-foreground/20 pt-8 text-center text-sm text-primary-foreground/70">
             <p>&copy; {new Date().getFullYear()} Maner Law. All Rights Reserved. Attorney Advertising.</p>
             <p className="mt-2">Site developed and maintained by <a href="https://easywebtogo.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">easywebtogo.com</a></p>
+            <p className="mt-2">The content of this website is provided for informational purposes only, and is not intended to be legal advice. You should not take action in your legal matter without first retaining a lawyer.</p>
           </div>
         </div>
       </footer>
