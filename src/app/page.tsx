@@ -47,7 +47,7 @@ const values = [
   {
     icon: <Shield className="h-8 w-8 text-accent" />,
     title: "Dedication",
-    description: "Committed to protecting our clients' interests with unwavering resolve.",
+    description: "Committed to protecting our clients\' interests with unwavering resolve.",
   },
   {
     icon: <Award className="h-8 w-8 text-accent" />,
@@ -86,18 +86,28 @@ export default function Home() {
             data-ai-hint={heroImage.imageHint}
           />
         )}
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-20 text-center">
-          <motion.h1 {...fadeIn} className="text-3xl md:text-5xl font-headline font-bold tracking-tight mb-4 text-shadow">
-            Expert Legal Counsel for Your Peace of Mind
-          </motion.h1>
-          <motion.p {...fadeIn} transition={{ delay: 0.2 }} className="text-md md:text-lg max-w-3xl mx-auto mb-6 text-shadow-sm">
-            Maner Law is dedicated to providing top-tier legal services with integrity and professionalism.
-          </motion.p>
-          <motion.div {...fadeIn} transition={{ delay: 0.4 }}>
-            <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-muted">
-              <Link href="#contact">Schedule a Consultation</Link>
-            </Button>
-          </motion.div>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
+          <div className="max-w-5xl mx-auto text-center">
+            <motion.div {...fadeIn}>
+              <div className="flex items-center justify-center gap-4 mb-8">
+                <div className="w-16 h-px bg-accent"></div>
+                <span className="text-accent text-sm tracking-[0.3em] uppercase font-medium">Est. 1985</span>
+                <div className="w-16 h-px bg-accent"></div>
+              </div>
+              <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif text-white mb-6 tracking-tight">Maner Law</h1>
+              <p className="text-xl md:text-2xl text-primary-foreground/80 font-serif italic mb-4">Advocates of Excellence</p>
+              <div className="w-24 h-0.5 bg-accent mx-auto mb-8"></div>
+              <p className="text-lg md:text-xl text-primary-foreground/70 max-w-2xl mx-auto mb-12 leading-relaxed">Distinguished legal counsel built on decades of trust, integrity, and unwavering commitment to our clients\' success.</p>
+            </motion.div>
+            <motion.div {...fadeIn} transition={{ delay: 0.2 }} className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-primary-foreground px-8 py-6 text-base tracking-wide">
+                <Link href="#contact">Schedule Consultation</Link>
+              </Button>
+              <Button asChild size="lg" variant="outline" className="border-white/30 text-white hover:bg-white/10 hover:text-white px-8 py-6 text-base tracking-wide">
+                <Link href="#practice-areas">Our Practice Areas</Link>
+              </Button>
+            </motion.div>
+          </div>
         </div>
         <div className="absolute bottom-10 md:bottom-20 left-1/2 -translate-x-1/2 z-20">
           <Link href="#about">
@@ -197,7 +207,7 @@ export default function Home() {
                   <div className="p-6 md:p-10 bg-white">
                     <h2 className="text-2xl font-headline text-primary mb-4">Get in Touch</h2>
                     <p className="text-muted-foreground/90 mb-6">
-                      Whether you have a question about our services or need to schedule a consultation, our team is ready to answer all your questions. Fill out the form, and we'll be in touch shortly.
+                      Whether you have a question about our services or need to schedule a consultation, our team is ready to answer all your questions. Fill out the form, and we\'ll be in touch shortly.
                     </p>
                     <div className="space-y-5">
                       <div className="flex items-start gap-4">
