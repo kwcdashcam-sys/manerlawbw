@@ -12,52 +12,30 @@ import { motion } from 'framer-motion';
 
 const practiceAreas = [
   {
-    icon: <Briefcase className="h-7 w-7 text-muted" />,
-    title: "Corporate Law",
-    description: "Our corporate law team provides comprehensive legal support for businesses of all sizes. We assist with business formation, contract drafting and negotiation, mergers and acquisitions, corporate governance, and ensuring regulatory compliance. Let us be your strategic legal partner in the business world."
+    icon: <Users className="h-7 w-7 text-muted" />,
+    title: "Immigration Law",
+    description: "We offer expert guidance on all aspects of immigration, including visas, permanent residency, and citizenship. Our team is dedicated to helping individuals and families navigate the complex immigration process with confidence."
   },
   {
-    icon: <HomeIcon className="h-7 w-7 text-muted" />,
-    title: "Real Estate Law",
-    description: "Navigating the complexities of real estate transactions requires a knowledgeable guide. We handle everything from residential closings to complex commercial property deals, zoning issues, and landlord-tenant disputes. We protect your property interests at every turn."
+    icon: <Gavel className="h-7 w-7 text-muted" />,
+    title: "Criminal Defence",
+    description: "If you are facing criminal charges, our experienced defence lawyers will fight for your rights. We handle all types of criminal cases, from minor infractions to serious indictable offences."
+  },
+  {
+    icon: <Scale className="h-7 w-7 text-muted" />,
+    title: "Civil Litigation",
+    description: "Our firm represents clients in a wide range of civil disputes. We are committed to resolving conflicts through negotiation, mediation, or litigation, always keeping your best interests at the forefront."
   },
   {
     icon: <HeartHandshake className="h-7 w-7 text-muted" />,
     title: "Family Law",
-    description: "We approach sensitive family matters with compassion and discretion. Our services cover divorce proceedings, child custody and support agreements, adoptions, and prenuptial agreements. We are committed to finding amicable solutions that prioritize the well-being of your family."
-  },
-  {
-    icon: <Gavel className="h-7 w-7 text-muted" />,
-    title: "Criminal Defense",
-    description: "When your freedom is on the line, you need a vigorous defense. Our experienced criminal defense attorneys represent clients facing a wide range of charges, from misdemeanors to serious felonies. We are dedicated to protecting your rights and ensuring a fair legal process."
+    description: "We provide compassionate and effective legal support for all family law matters. Our services include divorce, child custody and access, spousal and child support, and property division."
   },
   {
     icon: <ScrollText className="h-7 w-7 text-muted" />,
-    title: "Estate Planning",
-    description: "Secure your legacy and protect your loved ones with our comprehensive estate planning services. We assist with the creation of wills, trusts, powers of attorney, and healthcare directives. Plan for the future with confidence and peace of mind."
+    title: "Notary Public",
+    description: "Our notary public services include administering oaths, taking affidavits and statutory declarations, and certifying true copies of documents. We provide reliable and efficient notarial services."
   },
-  {
-    icon: <Lightbulb className="h-7 w-7 text-muted" />,
-    title: "Intellectual Property",
-    description: "In today's innovation-driven economy, protecting your ideas is paramount. Our IP attorneys help clients secure patents, trademarks, and copyrights. We also handle licensing agreements and litigation to defend your intellectual property from infringement."
-  },
-];
-
-const attorneys = [
-  {
-    name: "Ashish Maner",
-    title: "Founding Partner",
-    image: PlaceHolderImages.find(p => p.id === 'attorney-1'),
-    bio: "Ashish Maner founded the firm with a vision of providing ethical, client-focused legal representation. With over 25 years of experience in corporate law, he is a renowned strategist in mergers, acquisitions, and complex corporate litigation. His leadership and dedication to justice have set the standard for the entire firm.",
-    linkedin: "https://www.linkedin.com/in/ashish-maner-15731536/"
-  },
-  {
-    name: "Summer P.",
-    title: "Founding Partner",
-    image: PlaceHolderImages.find(p => p.id === 'attorney-1'),
-    bio: "Summer P. is a dedicated associate attorney known for her meticulous case preparation and client-centered approach. She brings a fresh perspective and a commitment to achieving the best possible outcomes for our clients across various practice areas.",
-    linkedin: "https://www.linkedin.com/in/summer-p-9922bbb6/"
-  }
 ];
 
 const values = [
@@ -208,41 +186,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Attorney Profiles Preview */}
-      <section id="attorneys" className="py-12 md:py-20 bg-background">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-20" ><span className="text-[#A8915F] text-sm tracking-[0.3em] uppercase font-medium">Our Team</span><h2 className="text-4xl md:text-5xl font-serif text-[#1E3A8A] mt-4 mb-6">Meet Our Attorneys</h2><div className="w-20 h-0.5 bg-[#A8915F] mx-auto mb-6"></div><p className="text-slate-600 max-w-2xl mx-auto text-lg">Our distinguished team combines deep legal knowledge with genuine dedication to achieving the best outcomes for our clients.</p></div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {attorneys.map((attorney, index) => (
-                <motion.div key={index} {...fadeIn} transition={{ delay: index * 0.2 }}>
-                  <Card className="flex flex-col sm:flex-row items-center p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 h-full">
-                    {attorney.image && (
-                      <Avatar className="h-28 w-28 sm:h-36 sm:w-36 flex-shrink-0 mb-5 sm:mb-0 sm:mr-6 border-4 border-accent">
-                        <AvatarImage src={attorney.image.imageUrl} alt={`Photo of ${attorney.name}`} data-ai-hint={attorney.image.imageHint} />
-                        <AvatarFallback>{attorney.name.split(' ').map(n => n[0]).join('')}</AvatarFallback>
-                      </Avatar>
-                    )}
-                    <div className="text-center sm:text-left">
-                      <CardHeader className="p-0">
-                        <div className="flex items-center justify-center sm:justify-start gap-3">
-                          <CardTitle className="font-headline text-xl text-primary">{attorney.name}</CardTitle>
-                          <Link href={attorney.linkedin} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
-                            <Linkedin size={18} />
-                          </Link>
-                        </div>
-                        <CardDescription className="font-semibold text-accent text-base">{attorney.title}</CardDescription>
-                      </CardHeader>
-                      <CardContent className="p-0 mt-3">
-                        <p className="text-sm text-foreground/80">{attorney.bio}</p>
-                      </CardContent>
-                    </div>
-                  </Card>
-                </motion.div>
-              ))}
-            </div>
-        </div>
-      </section>
-
       {/* Contact Section */}
       <section id="contact" className="py-12 md:py-20 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -326,7 +269,6 @@ export default function Home() {
                 <li><Link href="#home" className="text-primary-foreground/80 hover:text-white transition-colors">Home</Link></li>
                 <li><Link href="#about" className="text-primary-foreground/80 hover:text-white transition-colors">About Us</Link></li>
                 <li><Link href="#services" className="text-primary-foreground/80 hover:text-white transition-colors">Services</Link></li>
-                <li><Link href="#attorneys" className="text-primary-foreground/80 hover:text-white transition-colors">Attorneys</Link></li>
                 <li><Link href="#contact" className="text-primary-foreground/80 hover:text-white transition-colors">Contact</Link></li>
               </ul>
             </div>
