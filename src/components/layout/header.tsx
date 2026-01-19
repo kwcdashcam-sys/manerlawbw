@@ -10,7 +10,7 @@ import { Menu } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 const navLinks = [
-  { href: '#home', label: 'Home' },
+  { href: '#home', label: 'About Us' },
   { href: '#practice-areas', label: 'Practice Areas' },
   { href: '#contact', label: 'Contact' },
 ];

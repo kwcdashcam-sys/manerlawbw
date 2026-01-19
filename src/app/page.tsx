@@ -74,8 +74,7 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
-      <section id="home" className="relative h-screen text-white flex items-center">
-        <div className="absolute inset-0 bg-primary/80 z-10" />
+      <section id="home" className="relative h-screen text-white flex items-center">        
         {heroImage && (
           <Image
             src={heroImage.imageUrl}
@@ -86,7 +85,8 @@ export default function Home() {
             data-ai-hint={heroImage.imageHint}
           />
         )}
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
+        <div className="relative mx-auto bg-primary" >
+        <div className="container mx-auto p-8 sm:p-6 lg:p-8 relative z-20">
           <div className="max-w-5xl mx-auto text-center">
             <motion.div {...fadeIn}>
               <div className="flex items-center justify-center gap-4 mb-8">
@@ -108,6 +108,17 @@ export default function Home() {
               </Button>
             </motion.div>
           </div>
+          <div className="text-center mt-10">
+            <div className="flex justify-center items-center gap-12">
+              <motion.div {...fadeIn} transition={{delay: 0.2}} className='bg-black p-4'>
+                 <Image src="/images/The-voice-of-the-criminal-defence-bar-ml.png" alt="The Voice of the Criminal Defence Bar" width={150} height={150} />
+              </motion.div>
+              <motion.div {...fadeIn} transition={{delay: 0.4}} className='bg-black p-6'>
+                <Image src="/images/law-society-of-ontario-ml.png" alt="Law Society of Ontario" width={150} height={150} />
+              </motion.div>
+            </div>
+          </div>
+        </div>
         </div>
         <div className="absolute bottom-10 md:bottom-20 left-1/2 -translate-x-1/2 z-20">
           <Link href="#about">
@@ -166,7 +177,8 @@ export default function Home() {
                 <p className="text-sm text-muted-foreground/95 mt-1">{value.description}</p>
               </motion.div>
             ))}
-          </div>
+          </div>          
+
         </div>
       </section>
       
