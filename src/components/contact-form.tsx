@@ -17,6 +17,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
 import { Loader2 } from 'lucide-react';
 import React from 'react';
+import { Checkbox } from '@/components/ui/checkbox';
 
 const formSchema = z.object({
   name: z.string().min(2, 'Name must be at least 2 characters.'),
@@ -24,6 +25,7 @@ const formSchema = z.object({
   phone: z.string().optional(),
   subject: z.string().min(5, 'Subject must be at least 5 characters.'),
   message: z.string().min(10, 'Message must be at least 10 characters.').max(500, 'Message cannot exceed 500 characters.'),
+  terms: z.boolean().refine(value => value, 'You must accept the terms and conditions.'),
 });
 
 type FormData = z.infer<typeof formSchema>;
@@ -48,6 +50,7 @@ export function ContactForm() {
       phone: '',
       subject: '',
       message: '',
+      terms: false,
     },
   });
 
@@ -136,6 +139,23 @@ export function ContactForm() {
                 <Textarea placeholder="Please describe your legal issue in detail." {...field} rows={5} />
               </FormControl>
               <FormMessage />
+            </FormItem>
+          )}
+        />
+        <FormField
+          control={form.control}
+          name="terms"
+          render={({ field }) => (
+            <FormItem className="flex flex-row items-start space-x-3 space-y-0 rounded-md border p-4 shadow">
+              <FormControl>
+                <Checkbox checked={field.value} onCheckedChange={field.onChange} />
+              </FormControl>
+              <div className="space-y-1 leading-none">
+                <FormLabel>
+                  Accept terms and conditions
+                </FormLabel>
+                <FormMessage />
+              </div>
             </FormItem>
           )}
         />
