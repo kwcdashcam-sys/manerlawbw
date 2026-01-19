@@ -85,35 +85,35 @@ export default function Home() {
             data-ai-hint={heroImage.imageHint}
           />
         )}
-        <div className="relative mx-auto bg-primary" >
+        <div className="relative mx-auto bg-primary/90" >
         <div className="container mx-auto p-8 sm:p-6 lg:p-8 relative z-20">
           <div className="max-w-5xl mx-auto text-center">
             <motion.div {...fadeIn}>
               <div className="flex items-center justify-center gap-4 mb-8">
                 <div className="w-16 h-px bg-accent"></div>
-                <span className="text-accent text-sm tracking-[0.3em] uppercase font-medium">Est. 1985</span>
+                <span className="text-accent text-sm tracking-[0.3em] uppercase font-medium">About Us</span>
                 <div className="w-16 h-px bg-accent"></div>
               </div>
               <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif text-white mb-6 tracking-tight">Maner Law</h1>
               <p className="text-xl md:text-2xl text-primary-foreground/80 font-serif italic mb-4">Advocates of Excellence</p>
               <div className="w-24 h-0.5 bg-accent mx-auto mb-8"></div>
-              <p className="text-lg md:text-xl text-primary-foreground/70 max-w-2xl mx-auto mb-12 leading-relaxed">Distinguished legal counsel built on decades of trust, integrity, and unwavering commitment to our clients\' success.</p>
+              <p className="text-lg md:text-xl text-primary-foreground/70 max-w-2xl mx-auto mb-12 leading-relaxed">Distinguished legal counsel built on decades of trust, integrity, and unwavering commitment to our clients' success.</p>
             </motion.div>
             <motion.div {...fadeIn} transition={{ delay: 0.2 }} className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-primary-foreground px-8 py-6 text-base tracking-wide">
                 <Link href="#contact">Schedule Consultation</Link>
               </Button>
-              <Button asChild size="lg" variant="outline" className="border-white/30 text-white hover:bg-white/10 hover:text-white px-8 py-6 text-base tracking-wide">
+              <Button asChild size="lg" variant="outline" className="bg-primary hover:bg-white/90 text-white px-8 py-6 text-base tracking-wide">
                 <Link href="#practice-areas">Our Practice Areas</Link>
               </Button>
             </motion.div>
           </div>
           <div className="text-center mt-10">
             <div className="flex justify-center items-center gap-12">
-              <motion.div {...fadeIn} transition={{delay: 0.2}} className='bg-black p-4'>
+              <motion.div {...fadeIn} transition={{delay: 0.2}} className='bg-black/30 p-4'>
                  <Image src="/images/The-voice-of-the-criminal-defence-bar-ml.png" alt="The Voice of the Criminal Defence Bar" width={150} height={150} />
               </motion.div>
-              <motion.div {...fadeIn} transition={{delay: 0.4}} className='bg-black p-6'>
+              <motion.div {...fadeIn} transition={{delay: 0.4}} className='bg-black/30 p-6'>
                 <Image src="/images/law-society-of-ontario-ml.png" alt="Law Society of Ontario" width={150} height={150} />
               </motion.div>
             </div>
@@ -155,7 +155,7 @@ export default function Home() {
             </motion.div>
             <motion.div {...fadeIn} transition={{ delay: 0.2 }} className="space-y-4">
               <p className="text-base text-muted-foreground font-serif">
-                For nearly four decades, Maner Law has stood as a pillar of legal excellence in our community. Founded in 1985 by Jonathan Maner, our firm has grown from a small practice into a distinguished institution known for its principled approach to law.
+                For nearly four decades, Maner Law has stood as a pillar of legal excellence in our community. Our firm has grown from a small practice into a distinguished institution known for its principled approach to law.
               </p>
               <p className="text-base text-muted-foreground font-serif">
                 Our mission is clear: to provide exceptional legal representation while maintaining the highest standards of professionalism and ethical conduct. We believe that every client deserves not just legal expertise, but a trusted advisor who truly understands their unique circumstances.
