@@ -7,9 +7,9 @@ export function MapSection() {
         <section id="map" className="py-12 md:py-20 bg-background">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-20">
-                    <span className="text-primary-foreground text-sm tracking-[0.3em] uppercase font-medium">Meet In Person</span>
+                    <span className="text-accent text-base tracking-[0.3em] uppercase">Meet In Person</span>
                     <h2 className="text-4xl md:text-5xl font-serif text-primary mt-4 mb-6">Reach Us</h2>
-                    <div className="w-20 h-0.5 bg-primary-foreground mx-auto mb-6"></div>
+                    <div className="w-20 h-0.5 bg-accent mx-auto mb-6"></div>
                     <p className="text-muted-foreground max-w-2xl mx-auto text-lg">More comfortable to discuss your case in person</p>
                 </div>
 

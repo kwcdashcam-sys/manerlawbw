@@ -9,7 +9,6 @@ export default function Home() {
       <PracticeAreas />
       <Contact />
       <MapSection />
-      <Footer />
     </div>
   );
 }

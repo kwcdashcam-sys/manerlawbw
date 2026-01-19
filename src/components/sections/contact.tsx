@@ -9,13 +9,13 @@ export function Contact() {
     return (
         <section id="contact" className="py-12 md:py-20 bg-white">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="text-center mb-20" ><span className="text-primary-foreground text-sm tracking-[0.3em] uppercase font-medium">Get In Touch</span><h2 className="text-4xl md:text-5xl font-serif text-primary mt-4 mb-6">Contact Maner Law</h2><div className="w-20 h-0.5 bg-primary-foreground mx-auto mb-6"></div><p className="text-slate-600 max-w-2xl mx-auto text-lg">Ready to discuss your legal needs? Our team is here to help. Reach out to schedule a confidential consultation.</p></div>
+                <div className="text-center mb-20" ><span className="text-accent text-base tracking-[0.3em] uppercase">Get In Touch</span><h2 className="text-4xl md:text-5xl font-serif text-primary mt-4 mb-6">Contact Maner Law</h2><div className="w-20 h-0.5 bg-accent mx-auto mb-6"></div><p className="text-slate-600 max-w-2xl mx-auto text-lg">Ready to discuss your legal needs? Our team is here to help. Reach out to schedule a confidential consultation.</p></div>
                 <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
                     <Card className="overflow-hidden shadow-2xl">
-                        <CardContent className="p-0">
+                        <CardContent className="p-0"> 
                             <div className="grid md:grid-cols-2">
                                 <div className="p-6 md:p-10 bg-white">
-                                    <h2 className="text-2xl font-headline text-primary mb-4">Get in Touch</h2>
+                                    <h2 className="text-xl font-headline text-primary mb-4">Get in Touch</h2>
                                     <p className="text-muted-foreground/90 mb-6 text-lg">
                                         Whether you have a question about our services or need to schedule a consultation, our team is ready to answer all your questions. Fill out the form, and we'll be in touch shortly.
                                     </p>

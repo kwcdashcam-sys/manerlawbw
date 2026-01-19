@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import { Sheet, SheetContent, SheetTrigger, SheetClose } from '@/components/ui/sheet';
 import { Menu } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
@@ -48,7 +48,7 @@ export function Header() {
       )}
     >
       <div className="container mx-auto flex h-20 items-center justify-between px-4 sm:px-6 lg:px-8">
-        <Link href="#home" className="flex items-center">
+        <Link href="/#home" className="flex items-center">
           <Image src="/logo.png" alt="Maner Law Logo" width={200} height={53} />
         </Link>
         <div className="hidden md:flex items-center gap-8">
@@ -83,26 +83,31 @@ export function Header() {
             </SheetTrigger>
             <SheetContent side="right" className="w-[300px] sm:w-[400px] bg-background text-foreground">
               <div className="p-4">
-                <Link href="#home" className="flex items-center mb-8">
-                  <Image src="/logo.png" alt="Maner Law Logo" width={200} height={53} />
-                </Link>
+                <SheetClose asChild>
+                  <Link href="#home" className="flex items-center mb-8">
+                    <Image src="/logo.png" alt="Maner Law Logo" width={200} height={53} />
+                  </Link>
+                </SheetClose>
                 <nav className="flex flex-col gap-6">
                   {navLinks.map((link) => (
-                    <Link
-                      key={link.href}
-                      href={link.href}
-                      className={cn(
-                        'text-lg font-medium transition-colors hover:text-accent',
-                        activeLink === link.href ? 'text-accent' : 'text-foreground'
-                      )}
-                    >
-                      {link.label}
-                    </Link>
+                    <SheetClose key={link.href} asChild>
+                      <Link
+                        href={link.href}
+                        className={cn(
+                          'text-lg font-medium transition-colors hover:text-accent',
+                          activeLink === link.href ? 'text-accent' : 'text-foreground'
+                        )}
+                      >
+                        {link.label}
+                      </Link>
+                    </SheetClose>
                   ))}
                 </nav>
-                <Button asChild className="w-full mt-8 bg-primary hover:bg-accent/90 text-primary-foreground">
-                  <Link href="#contact">Free Consultation</Link>
-                </Button>
+                <SheetClose asChild>
+                  <Button asChild className="w-full mt-8 bg-primary hover:bg-accent/90 text-primary-foreground">
+                    <Link href="#contact">Free Consultation</Link>
+                  </Button>
+                </SheetClose>
               </div>
             </SheetContent>
           </Sheet>

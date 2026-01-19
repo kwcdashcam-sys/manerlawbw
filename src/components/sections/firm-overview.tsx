@@ -33,7 +33,7 @@ export function FirmOverview() {
     return (
         <section id="about" className="py-12 md:py-20 bg-background">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="text-center mb-20"><span className="text-primary-foreground text-sm tracking-[0.3em] uppercase font-medium">About Our Firm</span><h2 className="text-4xl md:text-5xl font-serif text-primary mt-4 mb-6">A Legacy of Legal Excellence</h2><div className="w-20 h-0.5 bg-primary-foreground mx-auto"></div></div>
+                <div className="text-center mb-20"><span className="text-accent text-base tracking-[0.3em] uppercase">About Our Firm</span><h2 className="text-4xl md:text-5xl font-serif text-primary mt-4 mb-6">A Legacy of Legal Excellence</h2><div className="w-20 h-0.5 bg-accent mx-auto"></div></div>
 
                 <div className="grid lg:grid-cols-2 gap-16 items-center mb-24">
                     <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>

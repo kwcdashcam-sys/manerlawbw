@@ -18,6 +18,7 @@ import { useToast } from '@/hooks/use-toast';
 import { Loader2 } from 'lucide-react';
 import React from 'react';
 import { Checkbox } from '@/components/ui/checkbox';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 
 const formSchema = z.object({
   name: z.string().min(2, 'Name must be at least 2 characters.'),
@@ -142,6 +143,14 @@ export function ContactForm() {
             </FormItem>
           )}
         />
+        <Accordion type="single" collapsible>
+          <AccordionItem value="item-1">
+            <AccordionTrigger>View Terms and Conditions</AccordionTrigger>
+            <AccordionContent>
+                The information on this website is for general purposes only and does not constitute legal advice. Accessing this site or contacting our firm through this website does not create an attorney-client relationship. You should consult a qualified lawyer for advice regarding your individual situation.
+            </AccordionContent>
+          </AccordionItem>
+        </Accordion>
         <FormField
           control={form.control}
           name="terms"
@@ -152,7 +161,7 @@ export function ContactForm() {
               </FormControl>
               <div className="space-y-1 leading-none">
                 <FormLabel>
-                  Accept terms and conditions
+                    I have read and agree to the terms and conditions.
                 </FormLabel>
                 <FormMessage />
               </div>

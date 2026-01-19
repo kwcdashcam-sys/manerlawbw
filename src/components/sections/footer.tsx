@@ -23,6 +23,7 @@ export function Footer() {
                             <li><Link href="#about" className="text-primary-foreground/80 hover:text-white transition-colors">About Us</Link></li>
                             <li><Link href="#practice-areas" className="text-primary-foreground/80 hover:text-white transition-colors">Practice Areas</Link></li>
                             <li><Link href="#contact" className="text-primary-foreground/80 hover:text-white transition-colors">Contact</Link></li>
+                            <li><Link href="/privacy-policy" className="text-primary-foreground/80 hover:text-white transition-colors">Privacy Policy</Link></li>
                         </ul>
                     </div>
                     <div>
@@ -70,11 +71,7 @@ export function Footer() {
                             <Link href="#" className="text-primary-foreground/80 hover:text-white transition-colors">
                                 <Facebook size={22} />
                                 <span className="sr-only">Facebook</span>
-                            </Link>
-                            <Link href="#" className="text-primary-foreground/80 hover:text-white transition-colors">
-                                <Twitter size={22} />
-                                <span className="sr-only">X.com</span>
-                            </Link>
+                            </Link>                            
                         </div>
                     </div>
                 </div>
