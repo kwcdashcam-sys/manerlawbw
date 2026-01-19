@@ -3,39 +3,32 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { usePathname } from 'next/navigation';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { Menu } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 const navLinks = [
-  { href: '#home', label: 'About Us' },
+  { href: '#about', label: 'About Us' },
   { href: '#practice-areas', label: 'Practice Areas' },
   { href: '#contact', label: 'Contact' },
 ];
 
 export function Header() {
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [activeLink, setActiveLink] = useState('#home');
-  const pathname = usePathname();
+  const [activeLink, setActiveLink] = useState('#');
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
-
-      const sections = navLinks.map(link => {
-        const href = link.href;
-        if (href.startsWith('#')) {
-          return document.getElementById(href.substring(1));
-        }
-        return null;
-      }).filter(Boolean);
-      
+      const sections = navLinks.map(link => document.getElementById(link.href.substring(1))).filter(Boolean) as HTMLElement[];
       const scrollPosition = window.scrollY + 100;
 
+      if (window.scrollY < 200) {
+        setActiveLink('#');
+        return;
+      }
+
       for (const section of sections) {
-        if (section && scrollPosition >= section.offsetTop && scrollPosition < section.offsetTop + section.offsetHeight) {
+        if (scrollPosition >= section.offsetTop && scrollPosition < section.offsetTop + section.offsetHeight) {
           setActiveLink(`#${section.id}`);
           break;
         }
@@ -45,14 +38,12 @@ export function Header() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-  
-  const isHomePage = pathname === '/';
 
   return (
     <header
       className={cn(
         'sticky top-0 z-50 w-full transition-all duration-300',
-        'bg-white shadow-md backdrop-blur-sm',
+        'bg-background/80 shadow-md backdrop-blur-sm',
         'text-primary'
       )}
     >
@@ -78,9 +69,9 @@ export function Header() {
             ))}
           </nav>
           <div>
-              <Button asChild className="bg-primary hover:bg-accent/90 text-muted">
-                  <Link href="#contact">Free Consultation</Link>
-              </Button>
+            <Button asChild className="bg-primary hover:bg-accent/90 text-primary-foreground">
+              <Link href="#contact">Free Consultation</Link>
+            </Button>
           </div>
         </div>
         <div className="md:hidden">
@@ -109,8 +100,8 @@ export function Header() {
                     </Link>
                   ))}
                 </nav>
-                 <Button asChild className="w-full mt-8 bg-primary hover:bg-accent/90 text-muted">
-                    <Link href="#contact">Free Consultation</Link>
+                <Button asChild className="w-full mt-8 bg-primary hover:bg-accent/90 text-primary-foreground">
+                  <Link href="#contact">Free Consultation</Link>
                 </Button>
               </div>
             </SheetContent>
