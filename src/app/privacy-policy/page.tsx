@@ -24,11 +24,11 @@ export default function PrivacyPolicy() {
                             </div>
                             <div>
                                 <h2 className="text-2xl font-bold font-serif text-primary mb-3">4. Geographic Jurisdiction</h2>
-                                <p>The lawyers at [Firm Name] are licensed to practice law in the Province of Ontario, Canada. This website is intended for residents of Ontario. Any disputes arising from the use of this website shall be governed by the laws of Ontario and the federal laws of Canada applicable therein.</p>
+                                <p>The lawyers at <strong>MANER LAW</strong> are licensed to practice law in the Province of Ontario, Canada. This website is intended for residents of Ontario. Any disputes arising from the use of this website shall be governed by the laws of Ontario and the federal laws of Canada applicable therein.</p>
                             </div>
                             <div>
                                 <h2 className="text-2xl font-bold font-serif text-primary mb-3">5. Third-Party Links</h2>
-                                <p>This website may contain links to third-party websites (such as government portals or legal resources). These links are provided for convenience only. [Firm Name] does not endorse, guarantee, or take responsibility for the accuracy or privacy practices of these external sites.</p>
+                                <p>This website may contain links to third-party websites (such as government portals or legal resources). These links are provided for convenience only. <strong>MANER LAW</strong> does not endorse, guarantee, or take responsibility for the accuracy or privacy practices of these external sites.</p>
                             </div>
                         </div>
                     </div>
