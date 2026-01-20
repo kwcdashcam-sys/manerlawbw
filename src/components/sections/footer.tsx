@@ -19,7 +19,7 @@ export function Footer() {
                         </p>
                     </div>
                     <div>
-                        <h3 className="font-headline font-semibold tracking-wider text-primary-foreground/90">Quick Links</h3>
+                        <h3 className="font-serif font-semibold tracking-wider text-primary-foreground/90">Quick Links</h3>
                         <ul className="mt-4 space-y-2 text-sm">
                             <li><Link href="#home" className="text-primary-foreground/80 hover:text-white transition-colors">Home</Link></li>
                             <li><Link href="#about" className="text-primary-foreground/80 hover:text-white transition-colors">About Us</Link></li>
@@ -29,7 +29,7 @@ export function Footer() {
                         </ul>
                     </div>
                     <div>
-                        <h3 className="font-headline font-semibold tracking-wider text-primary-foreground/90">Contact Info</h3>
+                        <h3 className="font-serif font-semibold tracking-wider text-primary-foreground/90">Contact Info</h3>
                         <ul className="mt-4 space-y-3 text-sm text-primary-foreground/80">
                             <li className="flex items-start gap-3">
                                 <MapPin className="h-5 w-5 mt-1 flex-shrink-0" />
@@ -64,7 +64,7 @@ export function Footer() {
                         </ul>
                     </div>
                     <div>
-                        <h3 className="font-headline font-semibold tracking-wider text-primary-foreground/90">Follow Us</h3>
+                        <h3 className="font-serif font-semibold tracking-wider text-primary-foreground/90">Follow Us</h3>
                         <div className="flex mt-4 space-x-4">
                             <Link href="#" className="text-primary-foreground/80 hover:text-white transition-colors">
                                 <Linkedin size={22} />

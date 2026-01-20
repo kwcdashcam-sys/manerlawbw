@@ -41,10 +41,10 @@ export function Hero() {
                             <p className="text-lg md:text-xl text-primary-foreground/70 max-w-2xl mx-auto mb-12 leading-relaxed">Distinguished legal counsel built on decades of trust, integrity, and unwavering commitment to our clients' success.</p>
                         </motion.div>
                         <motion.div {...fadeIn} transition={{ delay: 0.2 }} className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                            <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-primary-foreground px-8 py-6 text-base tracking-wide">
+                            <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground px-8 py-6 text-base tracking-wide">
                                 <Link href="#contact">Schedule Consultation</Link>
                             </Button>
-                            <Button asChild size="lg" variant="outline" className="bg-primary hover:bg-white/90 text-white px-8 py-6 text-base tracking-wide">
+                            <Button asChild size="lg" variant="outline" className="bg-transparent border-accent text-accent hover:bg-accent hover:text-accent-foreground px-8 py-6 text-base tracking-wide">
                                 <Link href="#practice-areas">Our Practice Areas</Link>
                             </Button>
                         </motion.div>

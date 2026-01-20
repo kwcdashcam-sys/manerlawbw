@@ -16,7 +16,7 @@ export function Contact() {
                         <CardContent className="p-0"> 
                             <div className="grid md:grid-cols-2">
                                 <div className="p-6 md:p-10 bg-white">
-                                    <h2 className="text-xl font-headline text-primary mb-4">Get in Touch</h2>
+                                    <h2 className="text-xl font-serif text-primary mb-4">Get in Touch</h2>
                                     <p className="text-muted-foreground/90 mb-6 text-lg">
                                         Whether you have a question about our services or need to schedule a consultation, our team is ready to answer all your questions. Fill out the form, and we'll be in touch shortly.
                                     </p>
@@ -26,7 +26,7 @@ export function Contact() {
                                                 <MapPin className="h-5 w-5" />
                                             </div>
                                             <div>
-                                                <h3 className="font-semibold text-lg">Our Offices</h3>
+                                                <h3 className="font-serif font-semibold text-lg">Our Offices</h3>
                                                 <div className="mt-2">
                                                     <h4 className="font-semibold text-base">Toronto Office</h4>
                                                     <p className="text-base text-muted-foreground/90">First Canadian Place<br />100 King St W, Suite #5700<br />Toronto, ON M5X 1C7</p>
@@ -44,7 +44,7 @@ export function Contact() {
                                                 <Mail className="h-5 w-5" />
                                             </div>
                                             <div>
-                                                <h3 className="font-semibold text-lg">Email Us</h3>
+                                                <h3 className="font-serif font-semibold text-lg">Email Us</h3>
                                                 <a href="mailto:contact@manerlaw.ca" className="text-base text-primary hover:underline">contact@manerlaw.ca</a>
                                             </div>
                                         </div>
@@ -53,7 +53,7 @@ export function Contact() {
                                                 <Phone className="h-5 w-5" />
                                             </div>
                                             <div>
-                                                <h3 className="font-semibold text-lg">Call Us</h3>
+                                                <h3 className="font-serif font-semibold text-lg">Call Us</h3>
                                                 <a href="tel:+14374240886" className="text-base text-muted-foreground/90 hover:text-primary transition-colors">+1 (437) 424-0886</a>,                    
                                                 <a href="tel:+16047043544" className="text-base text-muted-foreground/90 hover:text-primary transition-colors block">+1 (604) 704-3544</a>
                                             </div>
@@ -63,7 +63,7 @@ export function Contact() {
                                                 <Printer className="h-5 w-5" />
                                             </div>
                                             <div>
-                                                <h3 className="font-semibold text-lg">Fax</h3>
+                                                <h3 className="font-serif font-semibold text-lg">Fax</h3>
                                                 <a href="fax:+17787691971" className="text-base text-muted-foreground/90 hover:text-primary transition-colors">+1 (778) 769-1971</a>
                                             </div>
                                         </div>

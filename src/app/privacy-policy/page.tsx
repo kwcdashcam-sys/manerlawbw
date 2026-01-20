@@ -1,13 +1,13 @@
 
 export default function PrivacyPolicy() {
     return (
-        <div className="bg-[#F0F9FF] min-h-screen py-20">
+        <div className="bg-background min-h-screen py-20">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-lg overflow-hidden">
+                <div className="max-w-4xl mx-auto bg-card rounded-lg shadow-lg overflow-hidden">
                     <div className="px-6 py-8 sm:p-10">
                         <div className="text-center mb-10">
                             <h1 className="text-4xl font-bold font-serif text-primary">Legal Disclaimer</h1>
-                            <div className="mt-4 w-24 h-1 bg-amber-400 mx-auto"></div>
+                            <div className="mt-4 w-24 h-1 bg-accent mx-auto"></div>
                         </div>
                         <div className="space-y-8 text-lg text-muted-foreground">
                             <div>

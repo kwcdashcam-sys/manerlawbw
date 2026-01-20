@@ -67,7 +67,7 @@ export function FirmOverview() {
                             <div className="flex justify-center items-center h-16 w-16 rounded-full bg-primary/10 mx-auto mb-4">
                                 {value.icon}
                             </div>
-                            <h3 className="font-headline font-bold text-xl text-primary">{value.title}</h3>
+                            <h3 className="font-serif font-bold text-xl text-primary">{value.title}</h3>
                             <p className="text-lg text-muted-foreground/95 mt-1">{value.description}</p>
                         </motion.div>
                     ))}
