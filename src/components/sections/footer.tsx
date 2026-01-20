@@ -9,9 +9,11 @@ export function Footer() {
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-10">
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
                     <div className="md:col-span-1">
-                        <Link href="#home">
+                        <div className='bg-white'>
+                        <Link href="#home" >
                             <Image src="/logo.png" alt="Maner Law Logo" width={200} height={53} />
                         </Link>
+                        </div>
                         <p className="mt-4 text-sm text-primary-foreground/80">
                             Providing expert legal solutions with integrity and professionalism.
                         </p>

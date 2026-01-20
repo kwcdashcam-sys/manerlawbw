@@ -19,6 +19,7 @@ import { Loader2 } from 'lucide-react';
 import React from 'react';
 import { Checkbox } from '@/components/ui/checkbox';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
+import Link from 'next/link';
 
 const formSchema = z.object({
   name: z.string().min(2, 'Name must be at least 2 characters.'),
@@ -147,7 +148,7 @@ export function ContactForm() {
           <AccordionItem value="item-1">
             <AccordionTrigger>View Terms and Conditions</AccordionTrigger>
             <AccordionContent>
-                The information on this website is for general purposes only and does not constitute legal advice. Accessing this site or contacting our firm through this website does not create an attorney-client relationship. You should consult a qualified lawyer for advice regarding your individual situation.
+            Communication via the internet or email is not entirely secure. Please do not send any confidential or sensitive information via our contact forms or email addresses listed on this site until you have received authorization from one of our lawyers to do so. We encourage to read our full <Link href="/privacy-policy" target="_blank" className="text-blue-500 hover:underline">Privacy Policy</Link> before submiting any information.
             </AccordionContent>
           </AccordionItem>
         </Accordion>

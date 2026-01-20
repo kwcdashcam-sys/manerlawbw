@@ -49,7 +49,7 @@ export function FirmOverview() {
                     </motion.div>
                     <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.2 }} className="space-y-4">
                         <p className="text-lg text-muted-foreground font-serif">
-                            Maner Law has stood as a pillar of legal excellence in our community. Our firm has grown from a small practice into a distinguished institution known for its principled approach to law.
+                            <strong>MANER LAW</strong> has stood as a pillar of legal excellence in our community. Our firm has grown from a small practice into a distinguished institution known for its principled approach to law.
                         </p>
                         <p className="text-lg text-muted-foreground font-serif">
                             Our mission is clear: to provide exceptional legal representation while maintaining the highest standards of professionalism and ethical conduct. We believe that every client deserves not just legal expertise, but a trusted advisor who truly understands their unique circumstances.

@@ -12,7 +12,7 @@ export default function PrivacyPolicy() {
                         <div className="space-y-8 text-lg text-muted-foreground">
                             <div>
                                 <h2 className="text-2xl font-bold font-serif text-primary mb-3">1. No Lawyer-Client Relationship</h2>
-                                <p>The use of this website, or the use of the "Contact Us" form to communicate with [Firm Name], does not establish a lawyer-client relationship. A formal relationship is only established once we have had a direct consultation, confirmed there is no conflict of interest, and signed a written formal retainer agreement.</p>
+                                <p>The use of this website, or the use of the "Contact Us" form to communicate with <strong>MANER LAW</strong>, does not establish a lawyer-client relationship. A formal relationship is only established once we have had a direct consultation, confirmed there is no conflict of interest, and signed a written formal retainer agreement.</p>
                             </div>
                             <div>
                                 <h2 className="text-2xl font-bold font-serif text-primary mb-3">2. Not Legal Advice</h2>
