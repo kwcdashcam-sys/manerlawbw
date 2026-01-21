@@ -11,7 +11,7 @@ export function Footer() {
                     <div className="md:col-span-1">
                         <div className='bg-white'>
                         <Link href="#home" >
-                            <Image src="/logo.png" alt="Maner Law Logo" width={200} height={53} />
+                            <Image src="/images/logo.png" alt="Maner Law Logo" width={200} height={53} />
                         </Link>
                         </div>
                         <p className="mt-4 text-sm text-primary-foreground/80">
@@ -42,7 +42,7 @@ export function Footer() {
                                 <MapPin className="h-5 w-5 mt-1 flex-shrink-0" />
                                 <div>
                                     <h4 className="font-semibold text-sm">Waterloo Office</h4>
-                                    <span>Regus <br />180 Northfield Drive West, Unit 4, 1st Floor<br />Waterloo, ON N2L 0C7</span>
+                                    <span>180 Northfield Drive West, Unit 4, 1st Floor<br />Waterloo, ON N2L 0C7</span>
                                 </div>
                             </li>
                             <li className="flex items-center gap-3">

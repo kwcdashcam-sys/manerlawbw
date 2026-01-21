@@ -148,7 +148,7 @@ export function ContactForm() {
           <AccordionItem value="item-1">
             <AccordionTrigger>View Terms and Conditions</AccordionTrigger>
             <AccordionContent>
-            Communication via the internet or email is not entirely secure. Please do not send any confidential or sensitive information via our contact forms or email addresses listed on this site until you have received authorization from one of our lawyers to do so. We encourage to read our full <Link href="/privacy-policy" target="_blank" className="text-blue-500 hover:underline">Privacy Policy</Link> before submiting any information.
+            Communication via the internet or email is not entirely secure. Please do not send any confidential or sensitive information via our contact forms or email addresses listed on this site until you have received authorization from one of our lawyers to do so. We encourage to read our full Legal Disclaimer before submiting any information.
             </AccordionContent>
           </AccordionItem>
         </Accordion>

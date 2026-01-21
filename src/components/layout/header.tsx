@@ -7,11 +7,21 @@ import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger, SheetClose } from '@/components/ui/sheet';
 import { Menu } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
-const navLinks = [
-  { href: '#about', label: 'About Us' },
+const mainNavLinks = [
   { href: '#practice-areas', label: 'Practice Areas' },
   { href: '#contact', label: 'Contact' },
+];
+
+const aboutUsLinks = [
+  { href: '#our-people', label: 'Our People' },
+  { href: '#why-work-with-us', label: 'Why Work With Us' },
 ];
 
 export function Header() {
@@ -19,7 +29,7 @@ export function Header() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = navLinks.map(link => document.getElementById(link.href.substring(1))).filter(Boolean) as HTMLElement[];
+      const sections = [...mainNavLinks, ...aboutUsLinks].map(link => document.getElementById(link.href.substring(1))).filter(Boolean) as HTMLElement[];
       const scrollPosition = window.scrollY + 100;
 
       if (window.scrollY < 200) {
@@ -49,11 +59,34 @@ export function Header() {
     >
       <div className="container mx-auto flex h-20 items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link href="/#home" className="flex items-center">
-          <Image src="/logo.png" alt="Maner Law Logo" width={200} height={53} />
+          <Image src="/images/logo.png" alt="Maner Law Logo" width={200} height={49} />
         </Link>
         <div className="hidden md:flex items-center gap-8">
           <nav className="flex items-center gap-6">
-            {navLinks.map((link) => (
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Link
+                  href="#about"
+                  className={cn(
+                    'font-medium transition-colors hover:text-accent',
+                    (activeLink === '#our-people' || activeLink === '#why-work-with-us') ? 'text-accent' : 'text-primary/80',
+                    'relative after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-full after:scale-x-0 after:bg-accent after:transition-transform after:duration-300 hover:after:scale-x-100',
+                    (activeLink === '#our-people' || activeLink === '#why-work-with-us') && 'after:scale-x-100'
+                  )}
+                >
+                  About Us
+                </Link>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent>
+                <DropdownMenuItem asChild>
+                  <Link href="#our-people">Our People</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link href="#why-work-with-us">Why Work With Us</Link>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+            {mainNavLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
@@ -85,11 +118,37 @@ export function Header() {
               <div className="p-4">
                 <SheetClose asChild>
                   <Link href="#home" className="flex items-center mb-8">
-                    <Image src="/logo.png" alt="Maner Law Logo" width={200} height={53} />
+                    <Image src="/images/logo.png" alt="Maner Law Logo" width={200} height={49} />
                   </Link>
                 </SheetClose>
                 <nav className="flex flex-col gap-6">
-                  {navLinks.map((link) => (
+                  <SheetClose asChild>
+                    <Link
+                      href="#about"
+                      className={cn(
+                        'text-lg font-medium transition-colors hover:text-accent',
+                        (activeLink === '#our-people' || activeLink === '#why-work-with-us') ? 'text-accent' : 'text-foreground'
+                      )}
+                    >
+                      About Us
+                    </Link>
+                  </SheetClose>
+                  <div className="flex flex-col gap-4 pl-4">
+                    {aboutUsLinks.map(link => (
+                      <SheetClose key={link.href} asChild>
+                        <Link
+                          href={link.href}
+                          className={cn(
+                            'text-lg font-medium transition-colors hover:text-accent',
+                            activeLink === link.href ? 'text-accent' : 'text-foreground'
+                          )}
+                        >
+                          {link.label}
+                        </Link>
+                      </SheetClose>
+                    ))}
+                  </div>
+                  {mainNavLinks.map((link) => (
                     <SheetClose key={link.href} asChild>
                       <Link
                         href={link.href}

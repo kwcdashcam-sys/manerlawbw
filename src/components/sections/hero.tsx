@@ -26,40 +26,26 @@ export function Hero() {
                     data-ai-hint={heroImage.imageHint}
                 />
             )}
-            <div className="relative mx-auto bg-primary/90" >
+            <div className="absolute inset-0 h-full bg-primary/80 z-20 items-center justify-center" ></div>
                 <div className="container mx-auto p-8 sm:p-6 lg:p-8 relative z-20">
                     <div className="max-w-5xl mx-auto text-center">
-                        <motion.div {...fadeIn}>
-                            <div className="flex items-center justify-center gap-4 mb-8">
-                                <div className="w-16 h-px bg-accent"></div>
-                                <span className="text-accent text-sm tracking-[0.3em] uppercase font-medium">About Us</span>
-                                <div className="w-16 h-px bg-accent"></div>
-                            </div>
+                        <motion.div {...fadeIn}>                            
                             <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif text-white mb-6 tracking-tight">Maner Law</h1>
                             <p className="text-xl md:text-2xl text-primary-foreground/80 font-serif italic mb-4">Advocates of Excellence</p>
-                            <div className="w-24 h-0.5 bg-accent mx-auto mb-8"></div>
+                            <div className="w-24 h-0.5 bg-white mx-auto mb-8"></div>
                             <p className="text-lg md:text-xl text-primary-foreground/70 max-w-2xl mx-auto mb-12 leading-relaxed">Distinguished legal counsel built on decades of trust, integrity, and unwavering commitment to our clients' success.</p>
-                        </motion.div>
-                        <motion.div {...fadeIn} transition={{ delay: 0.2 }} className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                            <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground px-8 py-6 text-base tracking-wide">
-                                <Link href="#contact">Schedule Consultation</Link>
-                            </Button>
-                            <Button asChild size="lg" variant="outline" className="bg-transparent border-accent text-accent hover:bg-accent hover:text-accent-foreground px-8 py-6 text-base tracking-wide">
-                                <Link href="#practice-areas">Our Practice Areas</Link>
-                            </Button>
-                        </motion.div>
+                        </motion.div>                        
                     </div>
                     <div className="text-center mt-10">
                         <div className="flex justify-center items-center gap-12">
-                            <motion.div {...fadeIn} transition={{ delay: 0.2 }} className='bg-black/30 p-4'>
-                                <Image src="/images/The-voice-of-the-criminal-defence-bar-ml.png" alt="The Voice of the Criminal Defence Bar" width={150} height={150} />
+                            <motion.div {...fadeIn} transition={{ delay: 0.2 }} className='bg-white p-3'>
+                                <Image src="/images/caltv.png" alt="The Voice of the Criminal Defence Bar" width={150} height={150} />
                             </motion.div>
-                            <motion.div {...fadeIn} transition={{ delay: 0.4 }} className='bg-black/30 p-6'>
-                                <Image src="/images/law-society-of-ontario-ml.png" alt="Law Society of Ontario" width={150} height={150} />
+                            <motion.div {...fadeIn} transition={{ delay: 0.4 }} className='bg-white p-8'>
+                                <Image src="/images/Law_Society_of_Ontario_logo.svg" alt="Law Society of Ontario" width={150} height={150} />
                             </motion.div>
                         </div>
-                    </div>
-                </div>
+                    </div>                
             </div>
             <div className="absolute bottom-10 md:bottom-20 left-1/2 -translate-x-1/2 z-20">
                 <Link href="#about">

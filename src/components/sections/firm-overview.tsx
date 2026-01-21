@@ -31,9 +31,9 @@ export function FirmOverview() {
     const officeImage = PlaceHolderImages.find(p => p.id === 'office-interior');
 
     return (
-        <section id="about" className="py-12 md:py-20 bg-background">
+        <section id="about" className="py-12 md:py-20 bg-primary/5">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="text-center mb-20"><span className="text-accent text-base tracking-[0.3em] uppercase">About Our Firm</span><h2 className="text-4xl md:text-5xl font-serif text-primary mt-4 mb-6">A Legacy of Legal Excellence</h2><div className="w-20 h-0.5 bg-accent mx-auto"></div></div>
+                <div className="text-center mb-20"><span className="text-accent text-base tracking-[0.3em] uppercase">About Our Firm</span><h2 className="text-4xl md:text-5xl text-primary mt-4 mb-6">A Legacy of Legal Excellence</h2></div>
 
                 <div className="grid lg:grid-cols-2 gap-16 items-center mb-24">
                     <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
@@ -57,7 +57,7 @@ export function FirmOverview() {
                         <p className="text-lg text-muted-foreground font-serif">
                             Today, our team of accomplished attorneys continues this legacy, combining traditional values with innovative legal strategies to serve clients across a broad spectrum of practice areas.
                         </p>
-                        <div className="pt-4"><div className="inline-flex items-center gap-3 text-primary"><div className="w-12 h-px bg-primary-foreground"></div><span className="font-serif italic text-lg">"Excellence is not a destination, but a journey."</span></div></div>
+                        <div className="pt-4"><div className="inline-flex items-center gap-3 text-primary"><div className="w-12 h-px bg-primary"></div><span className="font-serif italic text-lg">"Excellence is not a destination, but a journey."</span></div></div>
                     </motion.div>
                 </div>
 
@@ -67,7 +67,7 @@ export function FirmOverview() {
                             <div className="flex justify-center items-center h-16 w-16 rounded-full bg-primary/10 mx-auto mb-4">
                                 {value.icon}
                             </div>
-                            <h3 className="font-serif font-bold text-xl text-primary">{value.title}</h3>
+                            <h3 className="font-semibold text-xl text-primary">{value.title}</h3>
                             <p className="text-lg text-muted-foreground/95 mt-1">{value.description}</p>
                         </motion.div>
                     ))}

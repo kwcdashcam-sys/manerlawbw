@@ -16,16 +16,16 @@
     --secondary-foreground: 0 0% 20%;
     --muted: 0 0% 96.1%;
     --muted-foreground: 0 0% 20%; /* #333333 */
-    --accent: 0 0% 30%; /* Dark Gray */
+    --accent: 0 0% 40%; /* #666 */
     --accent-foreground: 0 0% 98%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
     --border: 0 0% 89.8%;
     --input: 0 0% 89.8%;
-    --ring: 0 0% 30%; /* Dark Gray */
-    --chart-1: 0 0% 30%;
-    --chart-2: 0 0% 40%;
-    --chart-3: 0 0% 50%;
+    --ring: 0 0% 40%; /* #666 */
+    --chart-1: 0 0% 40%;
+    --chart-2: 0 0% 50%;
+    --chart-3: 0 0% 60%;
     --chart-4: 224 28% 25%;
     --chart-5: 224 28% 35%;
     --radius: 0.5rem;
@@ -44,7 +44,7 @@
     --secondary-foreground: 0 0% 98%;
     --muted: 224 28% 20%;
     --muted-foreground: 215 20.2% 65.1%;
-    --accent: 0 0% 25%; /* Lighter Gray for hover */
+    --accent: 0 0% 35%;
     --accent-foreground: 0 0% 98%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
