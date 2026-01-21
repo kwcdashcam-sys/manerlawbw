@@ -43,7 +43,7 @@ export function PracticeAreas() {
                 <div className="text-center mb-20" ><span className="text-accent text-base tracking-[0.3em] uppercase">Our Expertise</span><h2 className="text-4xl md:text-5xl text-primary mt-4 mb-6">Practice Areas</h2><p className="text-muted-foreground max-w-2xl mx-auto text-lg">Our attorneys bring decades of combined experience across diverse legal disciplines, providing comprehensive counsel tailored to your specific needs.</p></div>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {practiceAreas.map((area, index) => (
-                        <motion.div key={index} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: index * 0.1, duration: 0.5 }}>
+                        <motion.div key={index} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: index * 0.1, duration: 0.5 }} whileHover={{ scale: 1.05 }}>
                             <Card className="h-full p-8 bg-primary rounded-sm border border-transparent hover:border-primary/20 hover:shadow-xl transition-all duration-500">
                                 <CardHeader className="flex flex-row items-center gap-4">
                                     <div className="bg-primary rounded-full p-3 flex-shrink-0">

@@ -1,5 +1,6 @@
-
+'use client';
 import { Users, Trophy, Book } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 export default function WhyWorkWithUs() {
     return (
@@ -10,21 +11,21 @@ export default function WhyWorkWithUs() {
                     
                 </div>
                 <div className="grid md:grid-cols-3 gap-8 text-center">
-                    <div className="p-6 bg-background rounded-lg shadow-md">
+                    <motion.div className="p-6 bg-background rounded-lg shadow-md" whileHover={{ scale: 1.05 }} transition={{ duration: 0.3 }}>
                         <Users className="h-12 w-12 text-primary mx-auto mb-4" />
-                        <h4 className="text-2xl font-bold text-primary mb-3">Client-Centric Approach</h4>
+                        <h4 className="text-xl font-bold text-primary mb-3">Client-Centric Approach</h4>
                         <p className="text-muted-foreground">Your needs are our priority. We offer personalized legal solutions and maintain open communication every step of the way.</p>
-                    </div>
-                    <div className="p-6 bg-background rounded-lg shadow-md">
+                    </motion.div>
+                    <motion.div className="p-6 bg-background rounded-lg shadow-md" whileHover={{ scale: 1.05 }} transition={{ duration: 0.3 }}>
                         <Trophy className="h-12 w-12 text-primary mx-auto mb-4" />
-                        <h4 className="text-2xl font-bold text-primary mb-3">Proven Track Record</h4>
+                        <h4 className="text-xl font-bold text-primary mb-3">Proven Track Record</h4>
                         <p className="text-muted-foreground">Our history of successful outcomes speaks for itself. We are committed to achieving the best possible results for our clients.</p>
-                    </div>
-                    <div className="p-6 bg-background rounded-lg shadow-md">
+                    </motion.div>
+                    <motion.div className="p-6 bg-background rounded-lg shadow-md" whileHover={{ scale: 1.05 }} transition={{ duration: 0.3 }}>
                         <Book className="h-12 w-12 text-primary mx-auto mb-4" />
-                        <h4 className="text-2xl font-bold text-primary mb-3">Deep Expertise</h4>
+                        <h4 className="text-xl font-bold text-primary mb-3">Deep Expertise</h4>
                         <p className="text-muted-foreground">Our lawyers possess specialized knowledge across various areas of law, ensuring you receive expert advice and representation.</p>
-                    </div>
+                    </motion.div>
                 </div>
             </div>
         </div>

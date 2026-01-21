@@ -4,13 +4,16 @@ import { Mail, MapPin, Phone, Printer } from 'lucide-react';
 import { ContactForm } from '@/components/contact-form';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export function Contact() {
+    const fadeIn = { initial: { opacity: 0, y: 20 }, animate: { opacity: 1, y: 0 } };
 
     return (
         <section id="contact" className="py-12 md:py-20 bg-white">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="text-center mb-20" ><span className="text-accent text-base tracking-[0.3em] uppercase">Get In Touch</span><h2 className="text-4xl md:text-5xl text-primary mt-4 mb-6">Contact Maner Law</h2><p className="text-slate-600 max-w-2xl mx-auto text-lg">Ready to discuss your legal needs? Our team is here to help. Reach out to schedule a confidential consultation.</p></div>
+                <div className="text-center mb-10" ><span className="text-accent text-base tracking-[0.3em] uppercase">Get In Touch</span><h2 className="text-4xl md:text-5xl text-primary mt-4 mb-6">Contact Maner Law</h2><p className="text-slate-600 max-w-2xl mx-auto text-lg">Ready to discuss your legal needs? Our team is here to help. Reach out to schedule a confidential consultation.</p></div>
+                
                 <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
                     <Card className="overflow-hidden shadow-2xl">
                         <CardContent className="p-0"> 
@@ -75,8 +78,19 @@ export function Contact() {
                                 </div>
                             </div>
                         </CardContent>
+                        <div className="justify-center p-4">
+                        <div className="flex justify-center items-center gap-12">
+                            <motion.div {...fadeIn} transition={{ delay: 0.2 }} className='bg-white p-3'>
+                                <Image src="/images/cla-logo.png" alt="The Voice of the Criminal Defence Bar" width={250} height={250} />
+                            </motion.div>
+                            <motion.div {...fadeIn} transition={{ delay: 0.4 }} className='bg-white p-8'>
+                                <Image src="/images/Law_Society_of_Ontario_logo.svg" alt="Law Society of Ontario" width={250} height={250}  />
+                            </motion.div>
+                        </div>
+                    </div>
                     </Card>
-                </motion.div>
+                </motion.div>                
+
             </div>
         </section>
     )

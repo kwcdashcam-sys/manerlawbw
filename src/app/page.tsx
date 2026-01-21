@@ -9,9 +9,9 @@ export default function Home() {
       <OurPeople />
       <WhyWorkWithUs />
       <PracticeAreas />
-      <Contact />
-      <LegalDisclaimer />
+      <Contact />      
       <MapSection />
+      <LegalDisclaimer />
     </div>
   );
 }
