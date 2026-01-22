@@ -19,7 +19,6 @@ import { Loader2 } from 'lucide-react';
 import React from 'react';
 import { Checkbox } from '@/components/ui/checkbox';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
-import Link from 'next/link';
 
 const formSchema = z.object({
   name: z.string().min(2, 'Name must be at least 2 characters.'),
@@ -33,11 +32,19 @@ const formSchema = z.object({
 type FormData = z.infer<typeof formSchema>;
 
 async function handleContactSubmit(data: FormData) {
-  // 'use server';
-  // Simulate API call
-  await new Promise(resolve => setTimeout(resolve, 2000));
-  console.log('Form data submitted:', data);
-  return { success: true, message: "Thank you for your message! We'll be in touch soon." };
+  const response = await fetch('/api/contact', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(data),
+  });
+
+  if (!response.ok) {
+    throw new Error('Failed to send message');
+  }
+
+  return response.json();
 }
 
 export function ContactForm() {
@@ -56,23 +63,37 @@ export function ContactForm() {
     },
   });
 
+  const formatPhoneNumber = (value: string) => {
+    if (!value) return value;
+    const phoneNumber = value.replace(/[^\d]/g, "");
+    const phoneNumberLength = phoneNumber.length;
+    if (phoneNumberLength < 4) return phoneNumber;
+    if (phoneNumberLength < 7) {
+      return `(${phoneNumber.slice(0, 3)}) ${phoneNumber.slice(3)}`;
+    }
+    return `(${phoneNumber.slice(0, 3)}) ${phoneNumber.slice(
+      3,
+      6
+    )}-${phoneNumber.slice(6, 10)}`;
+  };
+
   async function onSubmit(values: FormData) {
     setIsSubmitting(true);
-    const result = await handleContactSubmit(values);
-    setIsSubmitting(false);
-
-    if (result.success) {
+    try {
+      const result = await handleContactSubmit(values);
       toast({
         title: 'Message Sent!',
         description: result.message,
       });
       form.reset();
-    } else {
+    } catch (error) {
       toast({
         variant: 'destructive',
         title: 'Submission Failed',
         description: 'Something went wrong. Please try again.',
       });
+    } finally {
+      setIsSubmitting(false);
     }
   }
 
@@ -112,7 +133,14 @@ export function ContactForm() {
             <FormItem>
               <FormLabel>Phone Number (Optional)</FormLabel>
               <FormControl>
-                <Input placeholder="(123) 456-7890" {...field} />
+                <Input 
+                  placeholder="(123) 456-7890" 
+                  {...field} 
+                  onChange={(e) => {
+                    const formattedPhoneNumber = formatPhoneNumber(e.target.value);
+                    field.onChange(formattedPhoneNumber);
+                  }}
+                />
               </FormControl>
               <FormMessage />
             </FormItem>
