@@ -3,7 +3,11 @@ import {NextRequest, NextResponse} from 'next/server';
 import nodemailer from 'nodemailer';
 
 export async function POST(req: NextRequest) {
-  const {name, email, message, subject} = await req.json();
+  const {name, email, message, subject, honeypot} = await req.json();
+
+  if (honeypot) {
+    return NextResponse.json({message: 'Bot submission detected.'}, {status: 200});
+  }
 
   // Create a transporter object using the default SMTP transport
   const transporter = nodemailer.createTransport({

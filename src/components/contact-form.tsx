@@ -27,6 +27,7 @@ const formSchema = z.object({
   subject: z.string().min(5, 'Subject must be at least 5 characters.'),
   message: z.string().min(10, 'Message must be at least 10 characters.').max(500, 'Message cannot exceed 500 characters.'),
   terms: z.boolean().refine(value => value, 'You must accept the terms and conditions.'),
+  honeypot: z.string().optional(),
 });
 
 type FormData = z.infer<typeof formSchema>;
@@ -60,6 +61,7 @@ export function ContactForm() {
       subject: '',
       message: '',
       terms: false,
+      honeypot: '',
     },
   });
 
@@ -100,6 +102,20 @@ export function ContactForm() {
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+        <div style={{ position: 'absolute', left: '-5000px', width: 0, height: 0, overflow: 'hidden' }}>
+            <FormField
+                control={form.control}
+                name="honeypot"
+                render={({ field }) => (
+                <FormItem>
+                    <FormLabel>Please leave this field blank</FormLabel>
+                    <FormControl>
+                    <Input {...field} tabIndex={-1} autoComplete="off" />
+                    </FormControl>
+                </FormItem>
+                )}
+            />
+        </div>
         <FormField
           control={form.control}
           name="name"
